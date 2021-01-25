@@ -51,6 +51,8 @@
 		5966F5A825B034CA00158408 /* UIKitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F5A725B034CA00158408 /* UIKitTextField.swift */; };
 		5966F5C225B34A0200158408 /* View+TypeErasion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F5C125B34A0200158408 /* View+TypeErasion.swift */; };
 		5996A78425BF6C3D00922B38 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5996A78225BF6C3D00922B38 /* Database.xcdatamodeld */; };
+		5996A78E25BF701900922B38 /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996A78D25BF701900922B38 /* Screenshots.swift */; };
+		5996A79F25BF703E00922B38 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996A79E25BF703E00922B38 /* SnapshotHelper.swift */; };
 		59A3349C25A4CC2E00E284E6 /* View+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3349B25A4CC2E00E284E6 /* View+RoundedCorners.swift */; };
 		59A334B525A5BDFD00E284E6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A334B425A5BDFD00E284E6 /* Colors.xcassets */; };
 		59A334BA25A70E7100E284E6 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A334B925A70E7100E284E6 /* Notifier.swift */; };
@@ -153,6 +155,16 @@
 		59FEBB6625B74E0700CA4D0D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FEBB6425B74E0700CA4D0D /* String+Localized.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5996A79025BF701900922B38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 594309A325A377B200B92594 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 594309B125A377B400B92594;
+			remoteInfo = "Remind (iOS)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		590F945A25BDE54D002523F7 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		590F946025BEC96D002523F7 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
@@ -192,6 +204,10 @@
 		5966F5A725B034CA00158408 /* UIKitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTextField.swift; sourceTree = "<group>"; };
 		5966F5C125B34A0200158408 /* View+TypeErasion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TypeErasion.swift"; sourceTree = "<group>"; };
 		5996A78325BF6C3D00922B38 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		5996A78B25BF701900922B38 /* Screenshots (iOS).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Screenshots (iOS).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5996A78D25BF701900922B38 /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
+		5996A78F25BF701900922B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5996A79E25BF703E00922B38 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		59A3349B25A4CC2E00E284E6 /* View+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorners.swift"; sourceTree = "<group>"; };
 		59A334B425A5BDFD00E284E6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		59A334B925A70E7100E284E6 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
@@ -257,6 +273,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		594309B725A377B400B92594 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5996A78825BF701900922B38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,6 +363,7 @@
 				594309A725A377B200B92594 /* Shared */,
 				594309B425A377B400B92594 /* iOS */,
 				594309BB25A377B400B92594 /* macOS */,
+				5996A78C25BF701900922B38 /* Screenshots (iOS) */,
 				594309B325A377B400B92594 /* Products */,
 				590F944D25BDE46F002523F7 /* Frameworks */,
 			);
@@ -369,6 +393,7 @@
 			children = (
 				594309B225A377B400B92594 /* Remind.app */,
 				594309BA25A377B400B92594 /* Remind.app */,
+				5996A78B25BF701900922B38 /* Screenshots (iOS).xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -472,6 +497,16 @@
 				5948A63C25B9E51E00F4C373 /* SoundPlayer.swift */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		5996A78C25BF701900922B38 /* Screenshots (iOS) */ = {
+			isa = PBXGroup;
+			children = (
+				5996A78D25BF701900922B38 /* Screenshots.swift */,
+				5996A79E25BF703E00922B38 /* SnapshotHelper.swift */,
+				5996A78F25BF701900922B38 /* Info.plist */,
+			);
+			path = "Screenshots (iOS)";
 			sourceTree = "<group>";
 		};
 		59A3349F25A4CC7200E284E6 /* User Interface */ = {
@@ -636,6 +671,24 @@
 			productReference = 594309BA25A377B400B92594 /* Remind.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5996A78A25BF701900922B38 /* Screenshots (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5996A79225BF701900922B38 /* Build configuration list for PBXNativeTarget "Screenshots (iOS)" */;
+			buildPhases = (
+				5996A78725BF701900922B38 /* Sources */,
+				5996A78825BF701900922B38 /* Frameworks */,
+				5996A78925BF701900922B38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5996A79125BF701900922B38 /* PBXTargetDependency */,
+			);
+			name = "Screenshots (iOS)";
+			productName = Screenshots;
+			productReference = 5996A78B25BF701900922B38 /* Screenshots (iOS).xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -650,6 +703,10 @@
 					};
 					594309B925A377B400B92594 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					5996A78A25BF701900922B38 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 594309B125A377B400B92594;
 					};
 				};
 			};
@@ -671,6 +728,7 @@
 			targets = (
 				594309B125A377B400B92594 /* Remind (iOS) */,
 				594309B925A377B400B92594 /* Remind (macOS) */,
+				5996A78A25BF701900922B38 /* Screenshots (iOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -757,6 +815,13 @@
 				592BBD3925B9EB3400E8EC6B /* ReminderCreated.wav in Resources */,
 				59AA2A8925B714C600BAFADA /* Inter-ExtraLight.ttf in Resources */,
 				59AA2A5A25B7121C00BAFADA /* Poppins-Thin.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5996A78925BF701900922B38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,7 +915,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5996A78725BF701900922B38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5996A78E25BF701900922B38 /* Screenshots.swift in Sources */,
+				5996A79F25BF703E00922B38 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5996A79125BF701900922B38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 594309B125A377B400B92594 /* Remind (iOS) */;
+			targetProxy = 5996A79025BF701900922B38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		594309C825A377B400B92594 /* Debug */ = {
@@ -970,6 +1052,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XK98WVAH5W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -978,11 +1061,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Memo;
 				PRODUCT_NAME = Remind;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -992,6 +1076,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XK98WVAH5W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -1000,12 +1085,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Memo;
 				PRODUCT_NAME = Remind;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1057,6 +1143,49 @@
 			};
 			name = Release;
 		};
+		5996A79325BF701900922B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XK98WVAH5W;
+				INFOPLIST_FILE = "Screenshots (iOS)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Screenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Remind (iOS)";
+			};
+			name = Debug;
+		};
+		5996A79425BF701900922B38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XK98WVAH5W;
+				INFOPLIST_FILE = "Screenshots (iOS)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Screenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Remind (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1083,6 +1212,15 @@
 			buildConfigurations = (
 				594309CE25A377B400B92594 /* Debug */,
 				594309CF25A377B400B92594 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5996A79225BF701900922B38 /* Build configuration list for PBXNativeTarget "Screenshots (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5996A79325BF701900922B38 /* Debug */,
+				5996A79425BF701900922B38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

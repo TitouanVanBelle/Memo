@@ -1,0 +1,8 @@
+app_identifier("com.TitouanVanBelle.Memo") # The bundle identifier of your app
+apple_id("titouan.vanbelle@orange.fr") # Your Apple email address
+
+itc_team_id("963858") # App Store Connect Team ID
+team_id("XK98WVAH5W") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

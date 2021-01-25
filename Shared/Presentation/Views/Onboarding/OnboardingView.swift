@@ -16,7 +16,7 @@ struct OnboardingView: View {
             Daisy.color.primaryBackground
                 .edgesIgnoringSafeArea(.all)
 
-            VStack(alignment: .center, spacing: 80) {
+            VStack(alignment: .center, spacing: 40) {
                 appIcon
                 copy
             }
@@ -38,15 +38,15 @@ fileprivate extension OnboardingView {
     }
 
     var copy: some View {
-        VStack(alignment: .center, spacing: 0) {
-            Text("Be Kind")
-                .font(Daisy.font.h1)
-                .foregroundColor(Daisy.color.primaryForeground)
-                .padding(.bottom, -14)
-
-            Text("Remind")
+        VStack(alignment: .center, spacing: 10) {
+            Text("Memo")
                 .font(Daisy.font.h0)
                 .foregroundColor(Daisy.color.quartiaryForeground)
+                .padding(.bottom, -24)
+
+            Text("Easy Reminders")
+                .font(Daisy.font.h1)
+                .foregroundColor(Daisy.color.primaryForeground)
 
             Text("Help your future self remember.\nSchedule reminders and get notified.")
                 .lineLimit(2)
