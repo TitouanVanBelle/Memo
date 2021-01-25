@@ -1,6 +1,6 @@
 //
 //  TodaySummaryViewModel.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 04.01.21.
 //
@@ -85,7 +85,7 @@ extension TodayStore {
             status = .idle
 
         case .onFailedToLoadReminders(let error):
-//            state.error = error
+            alertErrorMessage = error.localizedDescription
             status = .idle
 
         case .toggleReminder(let reminder):

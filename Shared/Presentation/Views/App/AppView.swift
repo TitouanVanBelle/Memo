@@ -1,11 +1,10 @@
 //
 //  AppView.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 11.01.21.
 //
 
-import Typist
 import SwiftUI
 
 struct AppView: View {

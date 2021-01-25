@@ -1,6 +1,6 @@
 //
 //  Daisy.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 19.01.21.
 //

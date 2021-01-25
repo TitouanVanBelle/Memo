@@ -1,5 +1,5 @@
 //
-//  YodaApp.swift
+//  RemindApp.swift
 //  Shared
 //
 //  Created by Titouan Van Belle on 04.01.21.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct YodaApp: App {
+struct RemindApp: App {
 
     let viewFactory = ViewFactory()
 

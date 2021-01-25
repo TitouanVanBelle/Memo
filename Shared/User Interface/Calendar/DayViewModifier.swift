@@ -1,6 +1,6 @@
 //
 //  DayViewModifier.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 13.01.21.
 //

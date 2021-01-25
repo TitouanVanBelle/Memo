@@ -1,6 +1,6 @@
 //
 //  System.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 25.01.21.
 //

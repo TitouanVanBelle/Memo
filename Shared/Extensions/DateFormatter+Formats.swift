@@ -1,6 +1,6 @@
 //
 //  DateFormatter+Formats.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 04.01.21.
 //

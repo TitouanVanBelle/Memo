@@ -1,6 +1,6 @@
 //
 //  ViewFactory.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 24.01.21.
 //

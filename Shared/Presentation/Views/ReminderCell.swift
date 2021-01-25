@@ -1,6 +1,6 @@
 //
 //  ReminderCell.swift
-//  Yoda
+//  Remind
 //
 //  Created by Titouan Van Belle on 04.01.21.
 //

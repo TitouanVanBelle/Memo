@@ -1,6 +1,6 @@
 //
 //  View+TypeErasion.swift
-//  Yoda (iOS)
+//  Remind (iOS)
 //
 //  Created by Titouan Van Belle on 16.01.21.
 //

@@ -1,6 +1,6 @@
 //
 //  OnboardingView.swift
-//  Yoda
+//  Remind
 //
 //  Created by Titouan Van Belle on 22.01.21.
 //

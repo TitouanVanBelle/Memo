@@ -34,10 +34,8 @@
 		593B648825AB429F004B6943 /* UserDefault+UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593B648725AB429F004B6943 /* UserDefault+UserSettings.swift */; };
 		593B648C25AB4FFE004B6943 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593B648B25AB4FFE004B6943 /* ToggleButton.swift */; };
 		593E89BE25AC71EC005FCBCF /* UserDefault+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593B648325AB41FD004B6943 /* UserDefault+PropertyWrapper.swift */; };
-		594309BE25A377B400B92594 /* Yoda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 594309A825A377B200B92594 /* Yoda.xcdatamodeld */; };
-		594309BF25A377B400B92594 /* Yoda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 594309A825A377B200B92594 /* Yoda.xcdatamodeld */; };
-		594309C025A377B400B92594 /* YodaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594309AA25A377B200B92594 /* YodaApp.swift */; };
-		594309C125A377B400B92594 /* YodaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594309AA25A377B200B92594 /* YodaApp.swift */; };
+		594309C025A377B400B92594 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594309AA25A377B200B92594 /* App.swift */; };
+		594309C125A377B400B92594 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594309AA25A377B200B92594 /* App.swift */; };
 		594309C425A377B400B92594 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594309AC25A377B200B92594 /* Persistence.swift */; };
 		594309C525A377B400B92594 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594309AC25A377B200B92594 /* Persistence.swift */; };
 		594309C625A377B400B92594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 594309AD25A377B400B92594 /* Assets.xcassets */; };
@@ -52,6 +50,7 @@
 		5966F59E25AF43D100158408 /* DayViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F59D25AF43D100158408 /* DayViewModifier.swift */; };
 		5966F5A825B034CA00158408 /* UIKitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F5A725B034CA00158408 /* UIKitTextField.swift */; };
 		5966F5C225B34A0200158408 /* View+TypeErasion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F5C125B34A0200158408 /* View+TypeErasion.swift */; };
+		5996A78425BF6C3D00922B38 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5996A78225BF6C3D00922B38 /* Database.xcdatamodeld */; };
 		59A3349C25A4CC2E00E284E6 /* View+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3349B25A4CC2E00E284E6 /* View+RoundedCorners.swift */; };
 		59A334B525A5BDFD00E284E6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A334B425A5BDFD00E284E6 /* Colors.xcassets */; };
 		59A334BA25A70E7100E284E6 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A334B925A70E7100E284E6 /* Notifier.swift */; };
@@ -174,13 +173,12 @@
 		593B648325AB41FD004B6943 /* UserDefault+PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+PropertyWrapper.swift"; sourceTree = "<group>"; };
 		593B648725AB429F004B6943 /* UserDefault+UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+UserSettings.swift"; sourceTree = "<group>"; };
 		593B648B25AB4FFE004B6943 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
-		594309A925A377B200B92594 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
-		594309AA25A377B200B92594 /* YodaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YodaApp.swift; sourceTree = "<group>"; };
+		594309AA25A377B200B92594 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		594309AC25A377B200B92594 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		594309AD25A377B400B92594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		594309B225A377B400B92594 /* Yoda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yoda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		594309B225A377B400B92594 /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594309B525A377B400B92594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		594309BA25A377B400B92594 /* Yoda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yoda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		594309BA25A377B400B92594 /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594309BC25A377B400B92594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		594309BD25A377B400B92594 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		594309D225A3798400B92594 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -193,6 +191,7 @@
 		5966F59D25AF43D100158408 /* DayViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModifier.swift; sourceTree = "<group>"; };
 		5966F5A725B034CA00158408 /* UIKitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTextField.swift; sourceTree = "<group>"; };
 		5966F5C125B34A0200158408 /* View+TypeErasion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TypeErasion.swift"; sourceTree = "<group>"; };
+		5996A78325BF6C3D00922B38 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		59A3349B25A4CC2E00E284E6 /* View+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorners.swift"; sourceTree = "<group>"; };
 		59A334B425A5BDFD00E284E6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		59A334B925A70E7100E284E6 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
@@ -360,7 +359,7 @@
 				5948A63B25B9E4C200F4C373 /* Sound */,
 				59A3349F25A4CC7200E284E6 /* User Interface */,
 				591CED0A25B8E363004DAF79 /* Container.swift */,
-				594309AA25A377B200B92594 /* YodaApp.swift */,
+				594309AA25A377B200B92594 /* App.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -368,8 +367,8 @@
 		594309B325A377B400B92594 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				594309B225A377B400B92594 /* Yoda.app */,
-				594309BA25A377B400B92594 /* Yoda.app */,
+				594309B225A377B400B92594 /* Remind.app */,
+				594309BA25A377B400B92594 /* Remind.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -422,13 +421,13 @@
 		594309EB25A3809200B92594 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				5996A78225BF6C3D00922B38 /* Database.xcdatamodeld */,
 				591CECFD25B8B505004DAF79 /* CoreDatabase.swift */,
 				59E1D7AB25BF02CC001FEBC4 /* CoreDatabasePublisher.swift */,
 				59B7738C25ADE2E1000B6A0B /* Fetch Requests */,
 				594309AC25A377B200B92594 /* Persistence.swift */,
 				593B648325AB41FD004B6943 /* UserDefault+PropertyWrapper.swift */,
 				593B648725AB429F004B6943 /* UserDefault+UserSettings.swift */,
-				594309A825A377B200B92594 /* Yoda.xcdatamodeld */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -600,9 +599,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		594309B125A377B400B92594 /* Yoda (iOS) */ = {
+		594309B125A377B400B92594 /* Remind (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Yoda (iOS)" */;
+			buildConfigurationList = 594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (iOS)" */;
 			buildPhases = (
 				594309AE25A377B400B92594 /* Sources */,
 				594309AF25A377B400B92594 /* Frameworks */,
@@ -612,17 +611,17 @@
 			);
 			dependencies = (
 			);
-			name = "Yoda (iOS)";
+			name = "Remind (iOS)";
 			packageProductDependencies = (
 				591CED0625B8E359004DAF79 /* Coil */,
 			);
-			productName = "Yoda (iOS)";
-			productReference = 594309B225A377B400B92594 /* Yoda.app */;
+			productName = "Remind (iOS)";
+			productReference = 594309B225A377B400B92594 /* Remind.app */;
 			productType = "com.apple.product-type.application";
 		};
-		594309B925A377B400B92594 /* Yoda (macOS) */ = {
+		594309B925A377B400B92594 /* Remind (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Yoda (macOS)" */;
+			buildConfigurationList = 594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (macOS)" */;
 			buildPhases = (
 				594309B625A377B400B92594 /* Sources */,
 				594309B725A377B400B92594 /* Frameworks */,
@@ -632,9 +631,9 @@
 			);
 			dependencies = (
 			);
-			name = "Yoda (macOS)";
-			productName = "Yoda (macOS)";
-			productReference = 594309BA25A377B400B92594 /* Yoda.app */;
+			name = "Remind (macOS)";
+			productName = "Remind (macOS)";
+			productReference = 594309BA25A377B400B92594 /* Remind.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -654,7 +653,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 594309A625A377B200B92594 /* Build configuration list for PBXProject "Yoda" */;
+			buildConfigurationList = 594309A625A377B200B92594 /* Build configuration list for PBXProject "Remind" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -670,8 +669,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				594309B125A377B400B92594 /* Yoda (iOS) */,
-				594309B925A377B400B92594 /* Yoda (macOS) */,
+				594309B125A377B400B92594 /* Remind (iOS) */,
+				594309B925A377B400B92594 /* Remind (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -768,7 +767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				594309C025A377B400B92594 /* YodaApp.swift in Sources */,
+				594309C025A377B400B92594 /* App.swift in Sources */,
 				590F947825BED312002523F7 /* TodayStore+Event.swift in Sources */,
 				59E1D7AC25BF02CC001FEBC4 /* CoreDatabasePublisher.swift in Sources */,
 				5948A63D25B9E51E00F4C373 /* SoundPlayer.swift in Sources */,
@@ -784,6 +783,7 @@
 				59FEBB2F25B7383B00CA4D0D /* TodayView.swift in Sources */,
 				594309F825A381D900B92594 /* DateFormatter+Formats.swift in Sources */,
 				594309C425A377B400B92594 /* Persistence.swift in Sources */,
+				5996A78425BF6C3D00922B38 /* Database.xcdatamodeld in Sources */,
 				59A3353D25A9CB8000E284E6 /* Calendar+DateGeneration.swift in Sources */,
 				59FEBB2725B7383B00CA4D0D /* AppView.swift in Sources */,
 				59E1D7A625BEF592001FEBC4 /* ReminderData.swift in Sources */,
@@ -804,7 +804,6 @@
 				59FEBB3325B7383B00CA4D0D /* TodayStore.swift in Sources */,
 				59AA2A3F25B7112200BAFADA /* Daisy.swift in Sources */,
 				59DFE1AB25B793A7004D497E /* PageView.swift in Sources */,
-				594309BE25A377B400B92594 /* Yoda.xcdatamodeld in Sources */,
 				59B7738725ADE2D9000B6A0B /* Reminder+FetchRequests.swift in Sources */,
 				5966F5A825B034CA00158408 /* UIKitTextField.swift in Sources */,
 				59DFE1B725B83A7C004D497E /* SegmentedPicker.swift in Sources */,
@@ -830,7 +829,7 @@
 				59FEBB5025B73C5F00CA4D0D /* Group+FetchRequests.swift in Sources */,
 				59FEBB2E25B7383B00CA4D0D /* ReminderView.swift in Sources */,
 				59A334DC25A7481700E284E6 /* Notifier.swift in Sources */,
-				594309C125A377B400B92594 /* YodaApp.swift in Sources */,
+				594309C125A377B400B92594 /* App.swift in Sources */,
 				59DFE1AC25B793A7004D497E /* PageView.swift in Sources */,
 				593E89BE25AC71EC005FCBCF /* UserDefault+PropertyWrapper.swift in Sources */,
 				59FEBB2825B7383B00CA4D0D /* AppView.swift in Sources */,
@@ -839,7 +838,6 @@
 				592BBD6025BB0ABC00E8EC6B /* OnboardingView.swift in Sources */,
 				59A334D725A7480C00E284E6 /* Date+Formatting.swift in Sources */,
 				59DFE1B325B82B19004D497E /* TimePicker.swift in Sources */,
-				594309BF25A377B400B92594 /* Yoda.xcdatamodeld in Sources */,
 				59FEBB6625B74E0700CA4D0D /* String+Localized.swift in Sources */,
 				59AA2A9C25B7182100BAFADA /* Daisy.swift in Sources */,
 				59A334D925A7480C00E284E6 /* DateFormatter+Formats.swift in Sources */,
@@ -980,8 +978,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Yoda;
-				PRODUCT_NAME = Yoda;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
+				PRODUCT_NAME = Remind;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1002,8 +1000,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Yoda;
-				PRODUCT_NAME = Yoda;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
+				PRODUCT_NAME = Remind;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1028,8 +1026,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Yoda;
-				PRODUCT_NAME = Yoda;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
+				PRODUCT_NAME = Remind;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1052,8 +1050,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Yoda;
-				PRODUCT_NAME = Yoda;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
+				PRODUCT_NAME = Remind;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1062,7 +1060,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		594309A625A377B200B92594 /* Build configuration list for PBXProject "Yoda" */ = {
+		594309A625A377B200B92594 /* Build configuration list for PBXProject "Remind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				594309C825A377B400B92594 /* Debug */,
@@ -1071,7 +1069,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Yoda (iOS)" */ = {
+		594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				594309CB25A377B400B92594 /* Debug */,
@@ -1080,7 +1078,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Yoda (macOS)" */ = {
+		594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				594309CE25A377B400B92594 /* Debug */,
@@ -1111,13 +1109,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		594309A825A377B200B92594 /* Yoda.xcdatamodeld */ = {
+		5996A78225BF6C3D00922B38 /* Database.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				594309A925A377B200B92594 /* Shared.xcdatamodel */,
+				5996A78325BF6C3D00922B38 /* Shared.xcdatamodel */,
 			);
-			currentVersion = 594309A925A377B200B92594 /* Shared.xcdatamodel */;
-			path = Yoda.xcdatamodeld;
+			currentVersion = 5996A78325BF6C3D00922B38 /* Shared.xcdatamodel */;
+			path = Database.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

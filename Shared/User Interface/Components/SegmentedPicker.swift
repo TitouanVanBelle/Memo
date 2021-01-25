@@ -1,6 +1,6 @@
 //
 //  SegmentedPicker.swift
-//  Yoda
+//  Remind
 //
 //  Created by Titouan Van Belle on 20.01.21.
 //
