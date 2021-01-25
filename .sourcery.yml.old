@@ -1,0 +1,6 @@
+sources:
+  - Shared
+templates:
+  - Shared/Stencils
+output:
+  - Shared/Generated

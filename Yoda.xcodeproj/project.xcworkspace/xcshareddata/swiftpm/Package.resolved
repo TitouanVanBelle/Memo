@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Coil",
+        "repositoryURL": "https://github.com/TitouanVanBelle/Coil",
+        "state": {
+          "branch": "master",
+          "revision": "7d9cc8ed37059bba674d9c9b992bf87b101e6c80",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

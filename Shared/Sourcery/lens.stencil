@@ -1,0 +1,7 @@
+{# This script assumes you follow swift naming convention, e.g. structs start with an upper letter #}
+{# Launch using Sourcery: https://github.com/krzysztofzablocki/Sourcery #}
+
+{% for type in types.implementing.AutoLense %}
+{{ type.name }}
+
+{% endfor %}
