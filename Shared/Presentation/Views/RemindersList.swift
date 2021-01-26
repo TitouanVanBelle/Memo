@@ -16,7 +16,7 @@ struct RemindersList: View {
     let onTap: (Reminder) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        LazyVStack(alignment: .leading, spacing: 8) {
             ForEach(reminders) { reminder in
                 ReminderCell(
                     reminder: reminder,
