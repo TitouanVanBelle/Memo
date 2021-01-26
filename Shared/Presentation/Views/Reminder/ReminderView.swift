@@ -56,7 +56,7 @@ struct ReminderView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .alert(isPresented: isPresentingAlert) {
-            Alert(title: Text("Error"), message: Text(store.alertErrorMessage!))
+            Alert(title: Text("global.error".localized), message: Text(store.alertErrorMessage!))
         }
         .onAppear(perform: store.action(for: .checkNotificationAuthorization))
     }
@@ -65,13 +65,9 @@ struct ReminderView: View {
 // MARK: UI
 
 fileprivate extension ReminderView {
-    var emoji: some View {
-        Text("🤖")
-    }
-
     var textfield: some View {
         UIKitTextField(
-            "What should I remind you of?".localized,
+            "reminder.textfield.placeholder".localized,
             text: $store.title,
             tag: 0,
             focusedTag: $store.focusedTag,
@@ -85,7 +81,7 @@ fileprivate extension ReminderView {
     }
 
     var emptyTitleErrorMessage: some View {
-        Text("Let me remind you to fill in this field")
+        Text("reminder.textfield.validation_message".localized)
             .font(Daisy.font.smallBodyRegular)
             .foregroundColor(Daisy.color.error)
     }
@@ -146,7 +142,7 @@ fileprivate extension ReminderView {
                 .interactiveSpring(),
                 store.reminder == nil ? store.action(for: .createReminder) : store.action(for: .updateReminder))
         }) {
-            Text(store.reminder == nil ? "Create" : "Update")
+            Text(store.reminder == nil ? "reminder.create".localized : "reminder.update".localized)
                 .font(Daisy.font.smallButton)
                 .foregroundColor(Daisy.color.white)
                 .padding(.horizontal, 18)

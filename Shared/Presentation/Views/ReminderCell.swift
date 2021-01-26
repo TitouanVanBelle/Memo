@@ -97,7 +97,7 @@ fileprivate extension ReminderCell {
                 Text(DateFormatter.relativeDateFormatter.string(from: reminder.date!))
             }
             if reminder.time != nil {
-                Text("at \(DateFormatter.timeWithMeridian.string(from: reminder.time!))")
+                Text("\("reminder_cell.at".localized) \(DateFormatter.timeWithMeridian.string(from: reminder.time!))")
             }
         }
         .font(Daisy.font.smallBody)

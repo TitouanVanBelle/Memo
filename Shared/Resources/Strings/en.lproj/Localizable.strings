@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  Remind
+
+  Created by Titouan Van Belle on 26.01.21.
+  
+*/
+
+// MARK: Data Seed
+
+"seed.1.title" = "Water plants";
+"seed.2.title" = "Call mom";
+"seed.3.title" = "Answer Tom's email";
+"seed.4.title" = "Exercise";
+
+
+// MARK: Global
+
+"global.error" = "Error";
+
+
+// MARK: Onboarding View
+
+"onboarding.app_name" = "Memo";
+"onboarding.app_subtitle" = "Easy Reminders";
+"onboarding.copy" = "Help your future self remember.\nSchedule reminders and get notified.";
+"onboarding.get_started" = "Get Started";
+
+
+// MARK: Today View
+
+"today.title" = "Hello";
+"today.subtitle" = "You have %d reminders today";
+"today.empty_view.title" = "No Reminders";
+"today.empty_view.subtitle" = "Create reminders by hitting\nthe blue button below";
+"today.create_reminder" = "Create Reminder";
+
+
+// MARK: Reminder Cell
+
+"reminder_cell.at" = "at";
+
+
+// MARK: Reminder View
+
+"reminder.textfield.placeholder" = "What should I remind you of?";
+"reminder.textfield.validation_message" = "Let me remind you to fill in this field";
+"reminder.create" = "Create";
+"reminder.update" = "Update";
+

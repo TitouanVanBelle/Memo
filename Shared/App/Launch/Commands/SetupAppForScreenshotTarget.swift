@@ -19,22 +19,22 @@ final class SetupAppForScreenshotTarget: LaunchCommand {
 
     let reminders = [
         ReminderData(
-            title: "Water plants",
+            title: "seed.1.title".localized,
             date: .today,
             time: Date(hour: 09, minute: 00)
         ),
         ReminderData(
-            title: "Call mom",
+            title: "seed.2.title".localized,
             date: .today,
             time: Date(hour: 10, minute: 00)
         ),
         ReminderData(
-            title: "Answer Tom's email",
+            title: "seed.3.title".localized,
             date: .today,
             time: Date(hour: 17, minute: 00)
         ),
         ReminderData(
-            title: "Exercise",
+            title: "seed.4.title".localized,
             date: .today,
             time: Date(hour: 18, minute: 30)
         )

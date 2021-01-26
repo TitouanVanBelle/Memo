@@ -71,7 +71,7 @@ fileprivate extension TodayView {
         .ignoresSafeArea(.keyboard)
         .onAppear(perform: store.action(for: .loadReminders))
         .alert(isPresented: isPresentingAlert) {
-            Alert(title: Text("Error"), message: Text(store.alertErrorMessage!))
+            Alert(title: Text("global.error".localized), message: Text(store.alertErrorMessage!))
         }
         .sheet(isPresented: $store.isSheetPresented) {
             reminderView
@@ -85,11 +85,11 @@ fileprivate extension TodayView {
                     .font(Daisy.font.largeTitle)
                     .foregroundColor(Daisy.color.quartiaryForeground)
 
-                Text("Hello 👋")
+                Text("today.title".localized + " 👋")
                     .font(Daisy.font.h1)
                     .foregroundColor(Daisy.color.primaryForeground)
 
-                Text("You have \(store.reminders.count) reminders today")
+                Text("today.subtitle".localized(with: store.reminders.count))
                     .lineLimit(2)
                     .font(Daisy.font.largeTitle)
                     .foregroundColor(Daisy.color.secondaryForeground)
@@ -115,11 +115,11 @@ fileprivate extension TodayView {
                 .aspectRatio(contentMode: .fit)
 
             VStack(spacing: 6) {
-                Text("No Reminders")
+                Text("today.empty_view.title".localized)
                     .font(Daisy.font.largeTitle)
                     .foregroundColor(Daisy.color.primaryForeground)
 
-                Text("Create reminders by hitting\nthe blue button below")
+                Text("today.empty_view.subtitle".localized)
                     .font(Daisy.font.largeBody)
                     .foregroundColor(Daisy.color.secondaryForeground)
                     .multilineTextAlignment(.center)
@@ -129,7 +129,7 @@ fileprivate extension TodayView {
 
     var createReminderButton: some View {
         Button(action: { store.send(event: .createNewReminder) }) {
-            Text("Create Reminder")
+            Text("today.create_reminder".localized)
                 .font(Daisy.font.smallButton)
                 .foregroundColor(Daisy.color.white)
                 .padding(.horizontal, 32)

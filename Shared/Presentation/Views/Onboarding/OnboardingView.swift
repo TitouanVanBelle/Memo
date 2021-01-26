@@ -39,16 +39,16 @@ fileprivate extension OnboardingView {
 
     var copy: some View {
         VStack(alignment: .center, spacing: 10) {
-            Text("Memo")
+            Text("onboarding.app_name".localized)
                 .font(Daisy.font.h0)
                 .foregroundColor(Daisy.color.quartiaryForeground)
                 .padding(.bottom, -24)
 
-            Text("Easy Reminders")
+            Text("onboarding.app_subtitle".localized)
                 .font(Daisy.font.h1)
                 .foregroundColor(Daisy.color.primaryForeground)
 
-            Text("Help your future self remember.\nSchedule reminders and get notified.")
+            Text("onboarding.copy".localized)
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
                 .font(Daisy.font.largeTitle)
@@ -58,7 +58,7 @@ fileprivate extension OnboardingView {
 
     var nextButton: some View {
         Button(action: { withAnimation(.spring()) { needsOnboarding = false } }) {
-            Text("Get Started")
+            Text("onboarding.get_started")
                 .font(Daisy.font.smallButton)
                 .foregroundColor(Daisy.color.white)
                 .padding(.horizontal, 32)
