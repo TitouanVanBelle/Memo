@@ -54,23 +54,6 @@ final class CoreDatabase: CoreDatabaseProtocol {
                 return
             }
 
-            if let date = data.date {
-                var actualDate = date
-                if let time = data.time {
-                    var components = Calendar.current.dateComponents([.day, .month, .year], from: actualDate)
-                    let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
-                    components.hour = timeComponents.hour!
-                    components.minute = timeComponents.minute!
-
-                    actualDate = Calendar.current.date(from: components)!
-                }
-
-                if actualDate.isInPast {
-                    promise(.failure(CoreDataError.creationFailed(.dateInPast)))
-                    return
-                }
-            }
-
             print("💾 Creating reminder with title \(data.title)")
             let reminder = Reminder(context: self.context)
             reminder.title = data.title

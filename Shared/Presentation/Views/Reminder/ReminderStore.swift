@@ -134,31 +134,43 @@ extension ReminderStore {
                 time: selectedTime
             )
 
-            status = .creatingReminder(data)
+            if data.title.isEmpty {
+                shouldShowEmptyTitleErrorMessage = true
+            } else {
+                shouldShowEmptyTitleErrorMessage = false
+            }
 
+            if let date = data.date {
+                var actualDate = date
+                if let time = data.time {
+                    var components = Calendar.current.dateComponents([.day, .month, .year], from: actualDate)
+                    let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
+                    components.hour = timeComponents.hour!
+                    components.minute = timeComponents.minute!
+
+                    actualDate = Calendar.current.date(from: components)!
+                }
+
+                if actualDate.isInPast {
+                    invalidAttempts += 1
+                    shouldShowDateInPastErrorMessage = true
+                } else {
+                    shouldShowDateInPastErrorMessage = false
+                }
+            }
+
+            if shouldShowDateInPastErrorMessage || shouldShowEmptyTitleErrorMessage {
+                return
+            }
+
+            status = .creatingReminder(data)
 
         case .onReminderCreated:
                 shouldDismiss = true
                 status = .idle
 
         case .onFailedToCreateReminder(let error):
-            switch error as! CoreDataError {
-            case .creationFailed(let reason):
-                switch reason {
-                case .reminderTitleEmpty:
-                    shouldShowEmptyTitleErrorMessage = true
-                case .dateInPast:
-                    invalidAttempts += 1
-                    shouldShowDateInPastErrorMessage = true
-                }
-
-            case .savingFailed(let error):
-                alertErrorMessage = error.localizedDescription
-
-            case .deletingFailed(let error):
-                alertErrorMessage = error.localizedDescription
-            }
-
+            alertErrorMessage = error.localizedDescription
             status = .idle
 
         // MARK: Update Reminder
@@ -169,6 +181,35 @@ extension ReminderStore {
                 date: selectedDate,
                 time: selectedTime
             )
+
+            if data.title.isEmpty {
+                shouldShowEmptyTitleErrorMessage = true
+            } else {
+                shouldShowEmptyTitleErrorMessage = false
+            }
+
+            if let date = data.date {
+                var actualDate = date
+                if let time = data.time {
+                    var components = Calendar.current.dateComponents([.day, .month, .year], from: actualDate)
+                    let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
+                    components.hour = timeComponents.hour!
+                    components.minute = timeComponents.minute!
+
+                    actualDate = Calendar.current.date(from: components)!
+                }
+
+                if actualDate.isInPast {
+                    invalidAttempts += 1
+                    shouldShowDateInPastErrorMessage = true
+                } else {
+                    shouldShowDateInPastErrorMessage = false
+                }
+            }
+
+            if shouldShowDateInPastErrorMessage || shouldShowEmptyTitleErrorMessage {
+                return
+            }
 
             status = .updatingReminder(reminder!, data)
 

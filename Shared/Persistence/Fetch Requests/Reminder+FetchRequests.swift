@@ -38,7 +38,7 @@ extension Reminder {
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
         request.sortDescriptors = [
             NSSortDescriptor(key: "completedDate", ascending: true),
-            NSSortDescriptor(key: "title", ascending: true)
+            NSSortDescriptor(key: "timeInSeconds", ascending: true)
         ]
         return request
     }

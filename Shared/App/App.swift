@@ -12,7 +12,9 @@ struct RemindApp: App {
 
     let viewFactory = ViewFactory()
 
+    #if os(iOS)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    #endif
 
     @Environment(\.scenePhase) var scenePhase
 
@@ -27,22 +29,5 @@ struct RemindApp: App {
                 try? PersistenceController.shared.container.viewContext.save()
             }
         }
-    }
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-
-        PersistenceController.shared.container.viewContext.persistentStoreCoordinator?.persistentStores.forEach({
-            if let url = $0.url {
-                print(url)
-            }
-        })
-
-        return true
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        try? PersistenceController.shared.container.viewContext.save()
     }
 }

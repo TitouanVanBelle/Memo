@@ -46,6 +46,11 @@
 		5948A63D25B9E51E00F4C373 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948A63C25B9E51E00F4C373 /* SoundPlayer.swift */; };
 		5948A64125B9E58D00F4C373 /* ReminderCompleted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5948A64025B9E58C00F4C373 /* ReminderCompleted.wav */; };
 		5948A64225B9E58D00F4C373 /* ReminderCompleted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5948A64025B9E58C00F4C373 /* ReminderCompleted.wav */; };
+		5949113E25C0107A0083489B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5949113D25C0107A0083489B /* AppDelegate.swift */; };
+		5949114E25C010D30083489B /* LaunchCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5949114D25C010D30083489B /* LaunchCommand.swift */; };
+		5949115325C010FF0083489B /* LaunchCommandExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5949115225C010FF0083489B /* LaunchCommandExecuter.swift */; };
+		5949115825C0114B0083489B /* SetupAppForScreenshotTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5949115725C0114B0083489B /* SetupAppForScreenshotTarget.swift */; };
+		5949116125C011A30083489B /* PrintDatabasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5949116025C011A30083489B /* PrintDatabasePath.swift */; };
 		5966F59A25AF18BB00158408 /* Date+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F59925AF18BB00158408 /* Date+Convenience.swift */; };
 		5966F59E25AF43D100158408 /* DayViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F59D25AF43D100158408 /* DayViewModifier.swift */; };
 		5966F5A825B034CA00158408 /* UIKitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5966F5A725B034CA00158408 /* UIKitTextField.swift */; };
@@ -199,6 +204,11 @@
 		5948A62F25B9DF1F00F4C373 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
 		5948A63C25B9E51E00F4C373 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		5948A64025B9E58C00F4C373 /* ReminderCompleted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ReminderCompleted.wav; sourceTree = "<group>"; };
+		5949113D25C0107A0083489B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5949114D25C010D30083489B /* LaunchCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCommand.swift; sourceTree = "<group>"; };
+		5949115225C010FF0083489B /* LaunchCommandExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCommandExecuter.swift; sourceTree = "<group>"; };
+		5949115725C0114B0083489B /* SetupAppForScreenshotTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAppForScreenshotTarget.swift; sourceTree = "<group>"; };
+		5949116025C011A30083489B /* PrintDatabasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintDatabasePath.swift; sourceTree = "<group>"; };
 		5966F59925AF18BB00158408 /* Date+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Convenience.swift"; sourceTree = "<group>"; };
 		5966F59D25AF43D100158408 /* DayViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModifier.swift; sourceTree = "<group>"; };
 		5966F5A725B034CA00158408 /* UIKitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTextField.swift; sourceTree = "<group>"; };
@@ -372,6 +382,7 @@
 		594309A725A377B200B92594 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5949114225C010920083489B /* App */,
 				590F948925BEDDD5002523F7 /* Architecture */,
 				59A334AF25A5BD6D00E284E6 /* Design System */,
 				594309F625A381CA00B92594 /* Extensions */,
@@ -382,8 +393,6 @@
 				594309EA25A3808300B92594 /* Resources */,
 				5948A63B25B9E4C200F4C373 /* Sound */,
 				59A3349F25A4CC7200E284E6 /* User Interface */,
-				591CED0A25B8E363004DAF79 /* Container.swift */,
-				594309AA25A377B200B92594 /* App.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -497,6 +506,36 @@
 				5948A63C25B9E51E00F4C373 /* SoundPlayer.swift */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		5949114225C010920083489B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5949114C25C010B50083489B /* Launch */,
+				594309AA25A377B200B92594 /* App.swift */,
+				5949113D25C0107A0083489B /* AppDelegate.swift */,
+				591CED0A25B8E363004DAF79 /* Container.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5949114C25C010B50083489B /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				5949115F25C0115E0083489B /* Commands */,
+				5949114D25C010D30083489B /* LaunchCommand.swift */,
+				5949115225C010FF0083489B /* LaunchCommandExecuter.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		5949115F25C0115E0083489B /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				5949115725C0114B0083489B /* SetupAppForScreenshotTarget.swift */,
+				5949116025C011A30083489B /* PrintDatabasePath.swift */,
+			);
+			path = Commands;
 			sourceTree = "<group>";
 		};
 		5996A78C25BF701900922B38 /* Screenshots (iOS) */ = {
@@ -847,6 +886,7 @@
 				5966F5C225B34A0200158408 /* View+TypeErasion.swift in Sources */,
 				59FEBB2F25B7383B00CA4D0D /* TodayView.swift in Sources */,
 				594309F825A381D900B92594 /* DateFormatter+Formats.swift in Sources */,
+				5949113E25C0107A0083489B /* AppDelegate.swift in Sources */,
 				594309C425A377B400B92594 /* Persistence.swift in Sources */,
 				5996A78425BF6C3D00922B38 /* Database.xcdatamodeld in Sources */,
 				59A3353D25A9CB8000E284E6 /* Calendar+DateGeneration.swift in Sources */,
@@ -855,7 +895,9 @@
 				59FEBB4825B73BF900CA4D0D /* Group.swift in Sources */,
 				590F949125BEDDF5002523F7 /* Feedback.swift in Sources */,
 				59FEBB6025B74DC700CA4D0D /* ReminderStore.swift in Sources */,
+				5949114E25C010D30083489B /* LaunchCommand.swift in Sources */,
 				59A3349C25A4CC2E00E284E6 /* View+RoundedCorners.swift in Sources */,
+				5949116125C011A30083489B /* PrintDatabasePath.swift in Sources */,
 				591CECFE25B8B505004DAF79 /* CoreDatabase.swift in Sources */,
 				593B648825AB429F004B6943 /* UserDefault+UserSettings.swift in Sources */,
 				590F948B25BEDDE1002523F7 /* Lens.swift in Sources */,
@@ -869,10 +911,12 @@
 				59FEBB3325B7383B00CA4D0D /* TodayStore.swift in Sources */,
 				59AA2A3F25B7112200BAFADA /* Daisy.swift in Sources */,
 				59DFE1AB25B793A7004D497E /* PageView.swift in Sources */,
+				5949115325C010FF0083489B /* LaunchCommandExecuter.swift in Sources */,
 				59B7738725ADE2D9000B6A0B /* Reminder+FetchRequests.swift in Sources */,
 				5966F5A825B034CA00158408 /* UIKitTextField.swift in Sources */,
 				59DFE1B725B83A7C004D497E /* SegmentedPicker.swift in Sources */,
 				5948A63025B9DF1F00F4C373 /* ShakeEffect.swift in Sources */,
+				5949115825C0114B0083489B /* SetupAppForScreenshotTarget.swift in Sources */,
 				59FEBB2925B7383B00CA4D0D /* ReminderCell.swift in Sources */,
 				594309FE25A3821B00B92594 /* Date+Formatting.swift in Sources */,
 				5966F59A25AF18BB00158408 /* Date+Convenience.swift in Sources */,
