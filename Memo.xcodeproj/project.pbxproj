@@ -1232,10 +1232,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Screenshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Remind (iOS)";
+				TEST_TARGET_NAME = "Memo (iOS)";
 			};
 			name = Debug;
 		};
@@ -1253,10 +1254,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Screenshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Remind (iOS)";
+				TEST_TARGET_NAME = "Memo (iOS)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

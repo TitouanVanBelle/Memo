@@ -17,7 +17,7 @@
                BlueprintIdentifier = "5996A78A25BF701900922B38"
                BuildableName = "Screenshots (iOS).xctest"
                BlueprintName = "Screenshots (iOS)"
-               ReferencedContainer = "container:Remind.xcodeproj">
+               ReferencedContainer = "container:Memo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "5996A78A25BF701900922B38"
                BuildableName = "Screenshots (iOS).xctest"
                BlueprintName = "Screenshots (iOS)"
-               ReferencedContainer = "container:Remind.xcodeproj">
+               ReferencedContainer = "container:Memo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "5996A78A25BF701900922B38"
             BuildableName = "Screenshots (iOS).xctest"
             BlueprintName = "Screenshots (iOS)"
-            ReferencedContainer = "container:Remind.xcodeproj">
+            ReferencedContainer = "container:Memo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

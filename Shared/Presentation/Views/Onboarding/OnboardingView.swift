@@ -49,7 +49,7 @@ fileprivate extension OnboardingView {
                 .foregroundColor(Daisy.color.primaryForeground)
 
             Text("onboarding.copy".localized)
-                .lineLimit(2)
+//                .lineLimit(2)
                 .multilineTextAlignment(.center)
                 .font(Daisy.font.largeTitle)
                 .foregroundColor(Daisy.color.secondaryForeground)
@@ -73,7 +73,11 @@ fileprivate extension OnboardingView {
 }
 
 struct OnboardingView_Previews: PreviewProvider {
+    static var french: Locale = .init(identifier: "fr-FR")
+    static var english: Locale = .init(identifier: "en-Us")
     static var previews: some View {
         OnboardingView(needsOnboarding: .constant(true))
+            .environment(\.colorScheme, .light)
+            .environment(\.locale, french)
     }
 }

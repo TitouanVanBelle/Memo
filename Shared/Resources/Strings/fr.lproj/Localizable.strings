@@ -23,8 +23,7 @@
 
 "onboarding.app_name" = "Memo";
 "onboarding.app_subtitle" = "Easy Reminders";
-"onboarding.copy" = "Aidez votre futur-vous.\n
-Planifiez des rappels et soyez averti";
+"onboarding.copy" = "Aidez votre futur-vous.\nPlanifiez des rappels et soyez averti";
 "onboarding.get_started" = "C'est parti";
 
 
@@ -32,9 +31,9 @@ Planifiez des rappels et soyez averti";
 
 "today.title" = "Bonjour";
 "today.subtitle" = "Vous avez %d rappels aujourd'hui";
-"today.empty_view.title" = "Pas de rappel";
-"today.empty_view.subtitle" = "Create reminders by hitting\nthe blue button below";
-"today.create_reminder" = "Create Reminder";
+"today.empty_view.title" = "Aucun rappel";
+"today.empty_view.subtitle" = "Tapez sur le bouton bleu ci-dessous pour créer un rappel";
+"today.create_reminder" = "Créer un rappel";
 
 
 // MARK: Reminder Cell
