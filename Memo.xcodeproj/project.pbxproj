@@ -194,9 +194,9 @@
 		594309AA25A377B200B92594 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		594309AC25A377B200B92594 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		594309AD25A377B400B92594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		594309B225A377B400B92594 /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		594309B225A377B400B92594 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594309B525A377B400B92594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		594309BA25A377B400B92594 /* Remind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		594309BA25A377B400B92594 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594309BC25A377B400B92594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		594309BD25A377B400B92594 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		594309D225A3798400B92594 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -404,8 +404,8 @@
 		594309B325A377B400B92594 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				594309B225A377B400B92594 /* Remind.app */,
-				594309BA25A377B400B92594 /* Remind.app */,
+				594309B225A377B400B92594 /* Memo.app */,
+				594309BA25A377B400B92594 /* Memo.app */,
 				5996A78B25BF701900922B38 /* Screenshots (iOS).xctest */,
 			);
 			name = Products;
@@ -686,9 +686,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		594309B125A377B400B92594 /* Remind (iOS) */ = {
+		594309B125A377B400B92594 /* Memo (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (iOS)" */;
+			buildConfigurationList = 594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Memo (iOS)" */;
 			buildPhases = (
 				594309AE25A377B400B92594 /* Sources */,
 				594309AF25A377B400B92594 /* Frameworks */,
@@ -698,17 +698,17 @@
 			);
 			dependencies = (
 			);
-			name = "Remind (iOS)";
+			name = "Memo (iOS)";
 			packageProductDependencies = (
 				591CED0625B8E359004DAF79 /* Coil */,
 			);
 			productName = "Remind (iOS)";
-			productReference = 594309B225A377B400B92594 /* Remind.app */;
+			productReference = 594309B225A377B400B92594 /* Memo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		594309B925A377B400B92594 /* Remind (macOS) */ = {
+		594309B925A377B400B92594 /* Memo (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (macOS)" */;
+			buildConfigurationList = 594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Memo (macOS)" */;
 			buildPhases = (
 				594309B625A377B400B92594 /* Sources */,
 				594309B725A377B400B92594 /* Frameworks */,
@@ -718,9 +718,9 @@
 			);
 			dependencies = (
 			);
-			name = "Remind (macOS)";
+			name = "Memo (macOS)";
 			productName = "Remind (macOS)";
-			productReference = 594309BA25A377B400B92594 /* Remind.app */;
+			productReference = 594309BA25A377B400B92594 /* Memo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5996A78A25BF701900922B38 /* Screenshots (iOS) */ = {
@@ -762,7 +762,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 594309A625A377B200B92594 /* Build configuration list for PBXProject "Remind" */;
+			buildConfigurationList = 594309A625A377B200B92594 /* Build configuration list for PBXProject "Memo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -780,8 +780,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				594309B125A377B400B92594 /* Remind (iOS) */,
-				594309B925A377B400B92594 /* Remind (macOS) */,
+				594309B125A377B400B92594 /* Memo (iOS) */,
+				594309B925A377B400B92594 /* Memo (macOS) */,
 				5996A78A25BF701900922B38 /* Screenshots (iOS) */,
 			);
 		};
@@ -989,7 +989,7 @@
 /* Begin PBXTargetDependency section */
 		5996A79125BF701900922B38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 594309B125A377B400B92594 /* Remind (iOS) */;
+			target = 594309B125A377B400B92594 /* Memo (iOS) */;
 			targetProxy = 5996A79025BF701900922B38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1137,7 +1137,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Memo;
-				PRODUCT_NAME = Remind;
+				PRODUCT_NAME = Memo;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1161,7 +1161,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Memo;
-				PRODUCT_NAME = Remind;
+				PRODUCT_NAME = Memo;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1187,8 +1187,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
-				PRODUCT_NAME = Remind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Memo;
+				PRODUCT_NAME = Memo;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1211,8 +1211,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Remind;
-				PRODUCT_NAME = Remind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TitouanVanBelle.Memo;
+				PRODUCT_NAME = Memo;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1264,7 +1264,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		594309A625A377B200B92594 /* Build configuration list for PBXProject "Remind" */ = {
+		594309A625A377B200B92594 /* Build configuration list for PBXProject "Memo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				594309C825A377B400B92594 /* Debug */,
@@ -1273,7 +1273,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (iOS)" */ = {
+		594309CA25A377B400B92594 /* Build configuration list for PBXNativeTarget "Memo (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				594309CB25A377B400B92594 /* Debug */,
@@ -1282,7 +1282,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Remind (macOS)" */ = {
+		594309CD25A377B400B92594 /* Build configuration list for PBXNativeTarget "Memo (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				594309CE25A377B400B92594 /* Debug */,

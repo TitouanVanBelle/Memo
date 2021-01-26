@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "594309B125A377B400B92594"
-               BuildableName = "Remind.app"
-               BlueprintName = "Remind (iOS)"
-               ReferencedContainer = "container:Remind.xcodeproj">
+               BuildableName = "Memo.app"
+               BlueprintName = "Memo (iOS)"
+               ReferencedContainer = "container:Memo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "5996A78A25BF701900922B38"
                BuildableName = "Screenshots (iOS).xctest"
                BlueprintName = "Screenshots (iOS)"
-               ReferencedContainer = "container:Remind.xcodeproj">
+               ReferencedContainer = "container:Memo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "594309B125A377B400B92594"
-            BuildableName = "Remind.app"
-            BlueprintName = "Remind (iOS)"
-            ReferencedContainer = "container:Remind.xcodeproj">
+            BuildableName = "Memo.app"
+            BlueprintName = "Memo (iOS)"
+            ReferencedContainer = "container:Memo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "594309B125A377B400B92594"
-            BuildableName = "Remind.app"
-            BlueprintName = "Remind (iOS)"
-            ReferencedContainer = "container:Remind.xcodeproj">
+            BuildableName = "Memo.app"
+            BlueprintName = "Memo (iOS)"
+            ReferencedContainer = "container:Memo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
