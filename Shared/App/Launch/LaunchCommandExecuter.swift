@@ -12,6 +12,10 @@ final class LaunchCommandExecuter {
     // MARK: Public Method
 
     static func execute(_ commands: [LaunchCommand]) {
-        commands.forEach { $0.execute() }
+        commands.forEach { command in
+            if !command.shouldOnlyExecuteOnce || !command.executed {
+                command.execute()
+            }
+        }
     }
 }

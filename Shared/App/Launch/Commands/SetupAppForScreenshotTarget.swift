@@ -13,6 +13,10 @@ final class SetupAppForScreenshotTarget: LaunchCommand {
     private let database = CoreDatabase()
     private var cancellables = Set<AnyCancellable>()
 
+    var shouldExecuteOnlyOnce: Bool {
+        true
+    }
+
     let reminders = [
         ReminderData(
             title: "Water plants",
@@ -36,7 +40,9 @@ final class SetupAppForScreenshotTarget: LaunchCommand {
         )
     ]
 
-    func execute() {
+    override func execute() {
+        super.execute()
+        
         reminders.publisher
             .flatMap {
                 self.database.createReminder(data: $0)

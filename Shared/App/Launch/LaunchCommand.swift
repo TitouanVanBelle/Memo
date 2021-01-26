@@ -7,6 +7,19 @@
 
 import Foundation
 
-protocol LaunchCommand {
-    func execute()
+class LaunchCommand {
+    var shouldOnlyExecuteOnce = false
+
+    private var userDefaultsKey: String {
+        "LaunchCommand.\(String(describing: type(of: self)))"
+    }
+
+    public private(set) var executed: Bool {
+        get { UserDefaults.standard.bool(forKey: userDefaultsKey) }
+        set { UserDefaults.standard.set(newValue, forKey: userDefaultsKey) }
+    }
+
+    func execute() {
+        executed = true
+    }
 }
