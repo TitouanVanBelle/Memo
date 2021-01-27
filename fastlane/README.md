@@ -20,6 +20,11 @@ or alternatively using `brew install fastlane`
 fastlane screenshots
 ```
 Generate new localized screenshots
+### release
+```
+fastlane release
+```
+Release a new version to the App Store
 
 ----
 

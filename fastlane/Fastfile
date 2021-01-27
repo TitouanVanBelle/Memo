@@ -19,3 +19,16 @@ desc "Generate new localized screenshots"
 lane :screenshots do
   snapshot
 end
+
+desc "Release a new version to the App Store"
+lane :release do
+  match(
+    type: "appstore"
+  )
+
+  build_app(
+    scheme: "Memo (iOS)"
+  )
+
+  deliver
+end
