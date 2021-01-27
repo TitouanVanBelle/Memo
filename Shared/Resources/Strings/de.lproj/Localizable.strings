@@ -5,3 +5,47 @@
   Created by Titouan Van Belle on 26.01.21.
   
 */
+
+// MARK: Data Seed
+
+"seed.1.title" = "Blumen gießen";
+"seed.2.title" = "Mama anrufen";
+"seed.3.title" = "Toms E-mail beantworten";
+"seed.4.title" = "Sport machen";
+"seed.new.title" = "Blumen gießen";
+
+
+// MARK: Global
+
+"global.error" = "Fehler";
+
+
+// MARK: Onboarding View
+
+"onboarding.app_name" = "Memo";
+"onboarding.app_subtitle" = "Easy Reminders";
+"onboarding.copy" = "Memos für dein zukünftiges Ich.\nErinnerungen erstellen und benachrichtigt werden.";
+"onboarding.get_started" = "Los geht's";
+
+
+// MARK: Today View
+
+"today.title" = "Hallo";
+"today.subtitle" = "Du hast heute %d Erinnerungen";
+"today.empty_view.title" = "Keine Erinnerungen";
+"today.empty_view.subtitle" = "Tippe auf die blaue Schaltfläche,\num eine Erinnerung zu erstellen";
+"today.create_reminder" = "Erinnerung Erstellen";
+
+
+// MARK: Reminder Cell
+
+"reminder_cell.at" = "um";
+
+
+// MARK: Reminder View
+
+"reminder.textfield.placeholder" = "Woran soll ich dich errinern?";
+"reminder.textfield.validation_message" = "Kleine Erinnerung: erstmal dieses Feld ausfüllen";
+"reminder.create" = "Erstellen";
+"reminder.update" = "Aktualisieren";
+

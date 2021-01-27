@@ -1,27 +1,23 @@
-# A list of devices you want to take the screenshots from
 devices([
-  "iPhone 12 Pro Max"
+  "iPhone 12 Pro Max",
+  "iPhone 12 Pro",
+  "iPhone 12",
+  "iPhone 12 mini",
+  "iPhone SE"
 ])
 
 languages([
   "en-US",
-  "fr-FR"
+  "fr-FR",
+  "de-DE"
 ])
 
-# The name of the scheme which contains the UI Tests
 scheme("Screenshots (iOS)")
 
-# Where should the resulting screenshots be stored?
-# output_directory("./screenshots")
+localize_simulator(true)
 
-# remove the '#' to clear all previously generated screenshots before creating new ones
+dark_mode(true)
+
 clear_previous_screenshots(true)
 
-# Remove the '#' to set the status bar to 9:41 AM, and show full battery and reception.
-# override_status_bar(true)
-
-# Arguments to pass to the app on launch. See https://docs.fastlane.tools/actions/snapshot/#launch-arguments
 launch_arguments(["-setupAppForScreenshotTarget true"])
-
-# For more information about all available options run
-# fastlane action snapshot

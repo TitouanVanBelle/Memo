@@ -33,6 +33,7 @@ struct DayViewModifier : ViewModifier {
                     .stroke(Daisy.color.quartiaryForeground, lineWidth: 1)
                     .frame(width: 30, height: 30)
             )
+            .accessibility(identifier: "today")
     }
 
     func pastDayModifier(_ content: Content) -> some View {

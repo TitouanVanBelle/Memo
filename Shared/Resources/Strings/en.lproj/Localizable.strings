@@ -12,6 +12,7 @@
 "seed.2.title" = "Call mom";
 "seed.3.title" = "Answer Tom's email";
 "seed.4.title" = "Exercise";
+"seed.new.title" = "Water Plants";
 
 
 // MARK: Global
@@ -32,7 +33,7 @@
 "today.title" = "Hello";
 "today.subtitle" = "You have %d reminders today";
 "today.empty_view.title" = "No Reminders";
-"today.empty_view.subtitle" = "Create reminders by hitting\nthe blue button below";
+"today.empty_view.subtitle" = "Tap the blue button below\nto create a reminder";
 "today.create_reminder" = "Create Reminder";
 
 

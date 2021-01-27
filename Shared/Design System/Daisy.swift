@@ -53,7 +53,7 @@ fileprivate extension UIFont {
 struct Daisy {
 
     struct Typography {
-        let h0 = Font(.poppinsSemiBold, size: 60)
+        let h0 = Font(.poppinsBold, size: 60)
         let h1 = Font(.poppinsSemiBold, size: 48)
         let h2 = Font(.poppinsSemiBold, size: 40)
         let h3 = Font(.poppinsSemiBold, size: 36)

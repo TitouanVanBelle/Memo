@@ -28,9 +28,8 @@ struct CalendarView: View {
             PageView(
                 months.map { month in
                     MonthView(month: month, selectedDate: $selectedDate)
-                        .background(Color.clear)
                 }
-            ).background(Color.clear)
+            )
         }
     }
 }

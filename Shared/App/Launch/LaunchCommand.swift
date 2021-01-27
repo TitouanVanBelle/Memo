@@ -10,8 +10,12 @@ import Foundation
 class LaunchCommand {
     var shouldOnlyExecuteOnce = false
 
+    private var commandName: String {
+        String(describing: type(of: self))
+    }
+
     private var userDefaultsKey: String {
-        "LaunchCommand.\(String(describing: type(of: self)))"
+        "LaunchCommand.\(commandName)"
     }
 
     public private(set) var executed: Bool {
@@ -20,6 +24,7 @@ class LaunchCommand {
     }
 
     func execute() {
+        print("🛠 Executing launch command \(commandName)")
         executed = true
     }
 }

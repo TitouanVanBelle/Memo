@@ -33,21 +33,46 @@ enum CoreDataError: Error, LocalizedError {
 }
 
 protocol CoreDatabaseProtocol {
-    func createReminder(data: ReminderData) -> AnyPublisher<Reminder, Error>
+    func createReminder(data: ReminderData, savesAutomatically: Bool) -> AnyPublisher<Reminder, Error>
     func toggleReminder(_ reminder: Reminder) -> AnyPublisher<Reminder, Error>
-    func deleteReminder(_ reminder: Reminder) -> AnyPublisher<Reminder, Error>
+    func deleteReminder(_ reminder: Reminder, savesAutomatically: Bool) -> AnyPublisher<Reminder, Error>
     func updateReminder(_ reminder: Reminder, with data: ReminderData) -> AnyPublisher<Reminder, Error>
-    func fetch<Entity>(request: NSFetchRequest<Entity>) -> CoreDatabasePublisher<Entity>
+    func deleteAllReminder() -> AnyPublisher<Void, Error>
+    func fetch<Entity>(request: NSFetchRequest<Entity>) -> AnyPublisher<[Entity], Error>
+    func fetchAndListen<Entity>(request: NSFetchRequest<Entity>) -> CoreDatabasePublisher<Entity>
+    func save() -> AnyPublisher<Void, Error>
 }
 
+ extension CoreDatabaseProtocol {
+    func createReminder(data: ReminderData) -> AnyPublisher<Reminder, Error> {
+        createReminder(data: data, savesAutomatically: true)
+    }
 
-final class CoreDatabase: CoreDatabaseProtocol {
+    func deleteReminder(_ reminder: Reminder) -> AnyPublisher<Reminder, Error> {
+        deleteReminder(reminder, savesAutomatically: true)
+    }
+ }
+
+
+ final class CoreDatabase: CoreDatabaseProtocol {
 
     private var context: NSManagedObjectContext {
         PersistenceController.shared.container.viewContext
     }
 
-    func createReminder(data: ReminderData) -> AnyPublisher<Reminder, Error> {
+    func deleteAllReminder() -> AnyPublisher<Void, Error> {
+        print("💾 Deleting all reminder")
+        return fetch(request: Reminder.all)
+            .flatMap { reminders in
+                Publishers.MergeMany(reminders.map { self.deleteReminder($0, savesAutomatically: false) })
+                    .collect()
+                    .eraseToAnyPublisher()
+            }
+            .map { _ in () }
+            .eraseToAnyPublisher()
+    }
+
+    func createReminder(data: ReminderData, savesAutomatically: Bool) -> AnyPublisher<Reminder, Error> {
         Future { promise in
             guard !data.title.isEmpty else {
                 promise(.failure(CoreDataError.creationFailed(.reminderTitleEmpty)))
@@ -61,7 +86,9 @@ final class CoreDatabase: CoreDatabaseProtocol {
             reminder.time = data.time
 
             do {
-                try self.context.save()
+                if savesAutomatically {
+                    try self.context.save()
+                }
                 promise(.success(reminder))
             } catch {
                 promise(.failure(CoreDataError.savingFailed(error)))
@@ -83,13 +110,15 @@ final class CoreDatabase: CoreDatabaseProtocol {
         }.eraseToAnyPublisher()
     }
 
-    func deleteReminder(_ reminder: Reminder) -> AnyPublisher<Reminder, Error> {
+    func deleteReminder(_ reminder: Reminder, savesAutomatically: Bool) -> AnyPublisher<Reminder, Error> {
         Future { promise in
             print("💾 Deleting reminder with title \(reminder.title)")
             self.context.delete(reminder)
 
             do {
-                try self.context.save()
+                if savesAutomatically {
+                    try self.context.save()
+                }
                 promise(.success(reminder))
             } catch {
                 promise(.failure(CoreDataError.deletingFailed(error)))
@@ -136,7 +165,30 @@ final class CoreDatabase: CoreDatabaseProtocol {
         }.eraseToAnyPublisher()
     }
 
-    func fetch<Entity>(request: NSFetchRequest<Entity>) -> CoreDatabasePublisher<Entity> where Entity: NSManagedObject {
+    func fetch<Entity>(request: NSFetchRequest<Entity>) -> AnyPublisher<[Entity], Error> {
+        Future { promise in
+            do {
+                let entities = try self.context.fetch(request)
+                promise(.success(entities))
+            } catch {
+                promise(.failure(error))
+            }
+        }.eraseToAnyPublisher()
+    }
+
+    func fetchAndListen<Entity>(request: NSFetchRequest<Entity>) -> CoreDatabasePublisher<Entity> where Entity: NSManagedObject {
         CoreDatabasePublisher(request: request, context: context)
+    }
+
+
+    func save() -> AnyPublisher<Void, Error> {
+        Future { promise in
+            do {
+                try self.context.save()
+                promise(.success(()))
+            } catch {
+                promise(.failure(error))
+            }
+        }.eraseToAnyPublisher()
     }
 }

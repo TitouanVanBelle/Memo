@@ -45,7 +45,7 @@ fileprivate extension OnboardingView {
                 .padding(.bottom, -24)
 
             Text("onboarding.app_subtitle".localized)
-                .font(Daisy.font.h1)
+                .font(Daisy.font.h2)
                 .foregroundColor(Daisy.color.primaryForeground)
 
             Text("onboarding.copy".localized)
@@ -59,6 +59,7 @@ fileprivate extension OnboardingView {
     var nextButton: some View {
         Button(action: { withAnimation(.spring()) { needsOnboarding = false } }) {
             Text("onboarding.get_started")
+                .accessibilityIdentifier(.getStartedButton)
                 .font(Daisy.font.smallButton)
                 .foregroundColor(Daisy.color.white)
                 .padding(.horizontal, 32)

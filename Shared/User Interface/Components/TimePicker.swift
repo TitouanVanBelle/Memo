@@ -71,6 +71,7 @@ fileprivate extension TimePicker {
         }
         .frame(width: proxy.size.width / 2 - 5)
         .clipped()
+        .accessibilityIdentifier(.hourPicker)
     }
 
     var colon: some View {
@@ -100,6 +101,7 @@ fileprivate extension TimePicker {
         }
         .frame(width: proxy.size.width / 2 - 5)
         .clipped()
+        .accessibilityIdentifier(.minutePicker)
     }
 
     func updateTime(with value: Int, component: Calendar.Component) {

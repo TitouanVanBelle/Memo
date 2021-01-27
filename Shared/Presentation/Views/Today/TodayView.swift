@@ -140,6 +140,7 @@ fileprivate extension TodayView {
                 .frame(height: 48)
                 .shadow(color: Daisy.color.black.opacity(0.5), radius: 16, x: 0, y: 8)
         )
+        .accessibilityIdentifier(.createReminderButton)
         .padding(.bottom, 28)
     }
 

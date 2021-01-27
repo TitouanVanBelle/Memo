@@ -12,6 +12,7 @@
 "seed.2.title" = "Appeler maman";
 "seed.3.title" = "Répondre à l'email de Tom";
 "seed.4.title" = "Faire de l'exercice";
+"seed.new.title" = "Arroser les plantes";
 
 
 // MARK: Global
@@ -23,7 +24,7 @@
 
 "onboarding.app_name" = "Memo";
 "onboarding.app_subtitle" = "Easy Reminders";
-"onboarding.copy" = "Aidez votre futur-vous.\nPlanifiez des rappels et soyez averti";
+"onboarding.copy" = "Aidez votre futur-vous.\nPlanifiez des rappels et soyez averti.";
 "onboarding.get_started" = "C'est parti";
 
 

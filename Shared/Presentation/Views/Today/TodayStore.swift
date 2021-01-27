@@ -130,7 +130,7 @@ extension TodayStore {
 extension TodayStore {
 
     static func whenLoadingReminders(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
-        database.fetch(request: Reminder.todaysReminders)
+        database.fetchAndListen(request: Reminder.todaysReminders)
             .map(Event.onRemindersLoaded)
             .catch { Just(Event.onFailedToLoadReminders($0)) }
             .eraseToAnyPublisher()

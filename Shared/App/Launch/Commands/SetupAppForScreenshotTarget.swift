@@ -10,7 +10,7 @@ import Combine
 
 final class SetupAppForScreenshotTarget: LaunchCommand {
 
-    private let database = CoreDatabase()
+    private let database: CoreDatabaseProtocol = CoreDatabase()
     private var cancellables = Set<AnyCancellable>()
 
     var shouldExecuteOnlyOnce: Bool {
@@ -43,13 +43,27 @@ final class SetupAppForScreenshotTarget: LaunchCommand {
     override func execute() {
         super.execute()
         
-        reminders.publisher
-            .flatMap {
-                self.database.createReminder(data: $0)
+        prepareDatabase()
+        resetOnboarding()
+    }
+}
+
+fileprivate extension SetupAppForScreenshotTarget {
+    func resetOnboarding() {
+        UserDefaults.standard.setValue(true, forKey: "needsOnboarding")
+    }
+
+    func prepareDatabase() {
+        deleteAllReminder()
+            .flatMap { _ in
+                self.seedData()
+            }
+            .flatMap { _ in
+                self.database.save()
             }
             .sink(
                 receiveCompletion: { result in
-                    if case .failure(let error) = result {
+                    if case .failure(let error) = result, ((error as? CoreDatabase) != nil) {
                         print("❗️Error: \(error.localizedDescription)")
                     } else {
                         print("🛠 Seeded \(self.reminders.count) reminders into database")
@@ -58,5 +72,19 @@ final class SetupAppForScreenshotTarget: LaunchCommand {
                 receiveValue: { _ in }
             )
             .store(in: &cancellables)
+    }
+
+    func deleteAllReminder() -> AnyPublisher<Void, Error> {
+        database.deleteAllReminder()
+            .eraseToAnyPublisher()
+    }
+
+    func seedData() -> AnyPublisher<[Reminder], Error> {
+        reminders.publisher
+            .flatMap {
+                self.database.createReminder(data: $0, savesAutomatically: false)
+            }
+            .collect()
+            .eraseToAnyPublisher()
     }
 }

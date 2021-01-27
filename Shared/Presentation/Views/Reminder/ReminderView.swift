@@ -77,6 +77,7 @@ fileprivate extension ReminderView {
         .setAutocapitalizationType(.sentences)
         .setFont(Daisy.uiFont.h7)
         .setForegroundColor(Daisy.uiColor.primaryForeground)
+        .accessibilityIdentifier(.reminderTitleTextfield)
         .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
     }
 
@@ -112,8 +113,7 @@ fileprivate extension ReminderView {
                     .font(Daisy.font.smallBodyRegular)
                     .foregroundColor(Daisy.color.primaryForeground)
             }
-
-        }
+        }.accessibilityIdentifier(.showDatePickerButton)
     }
 
     @ViewBuilder var timeButton: some View {
@@ -133,7 +133,7 @@ fileprivate extension ReminderView {
         .opacity(store.selectedDate == nil ? 0.3 : 1)
         .disabled(store.selectedDate == nil)
         .modifier(ShakeEffect(shakes: store.invalidAttempts))
-        .animation(.spring())
+        .accessibilityIdentifier(.showTimePickerButton)
     }
 
     var createButton: some View {

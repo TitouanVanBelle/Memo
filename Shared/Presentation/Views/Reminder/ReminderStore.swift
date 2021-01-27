@@ -339,7 +339,7 @@ extension ReminderStore {
         switch bottomViewContent {
         case .datePicker: return 330
         case .timePicker: return CGFloat(keyboardHeight)
-        case nil: return CGFloat(keyboardHeight) + 10
+        case nil: return 0
         }
     }
 

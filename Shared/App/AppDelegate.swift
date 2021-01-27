@@ -33,7 +33,7 @@ fileprivate extension AppDelegate {
         ]
         #endif
 
-        if ProcessInfo.processInfo.arguments.contains("setupAppForScreenshotTarget") {
+        if ProcessInfo.processInfo.arguments.contains("-setupAppForScreenshotTarget") {
             commands += [SetupAppForScreenshotTarget()]
         }
 
