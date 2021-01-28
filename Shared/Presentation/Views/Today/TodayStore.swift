@@ -162,8 +162,8 @@ extension TodayStore {
                 .setFailureType(to: Error.self)
         )
         .map(\.0)
-        .map(Event.onReminderToggled)
-        .catch { Just(Event.onFailedToToggleReminder($0)) }
+        .map(Event.onReminderDeleted)
+        .catch { Just(Event.onFailedToDeleteReminder($0)) }
         .eraseToAnyPublisher()
     }
 }
