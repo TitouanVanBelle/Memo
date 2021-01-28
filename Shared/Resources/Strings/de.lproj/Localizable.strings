@@ -49,3 +49,7 @@
 "reminder.create" = "Erstellen";
 "reminder.update" = "Aktualisieren";
 
+// MARK: Reminders View
+
+"reminders.unscheduled" = "Ohne Zeitangabe";
+"reminders.overdue" = "Überfällig";
