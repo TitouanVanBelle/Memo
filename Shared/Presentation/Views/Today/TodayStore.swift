@@ -106,11 +106,11 @@ extension TodayStore {
             status = .deletingReminder(reminder)
 
         case .onReminderDeleted(let reminder):
-            let index = reminders.firstIndex(of: reminder)!
-            reminders.remove(at: index)
+            status = .idle
 
         case .onFailedToDeleteReminder(let error):
             alertErrorMessage = error.localizedDescription
+            status = .idle
 
         case .selectReminder(let reminder):
             sheetContentType = .reminder(reminder)

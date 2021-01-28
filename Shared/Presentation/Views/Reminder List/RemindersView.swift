@@ -30,6 +30,9 @@ struct RemindersView: View {
             }
         }
         .onAppear(perform: store.action(for: .loadReminders))
+        .sheet(isPresented: $store.isSheetPresented) {
+            viewFactory.makeReminderView(for: store.selectedReminder)
+        }
     }
 }
 

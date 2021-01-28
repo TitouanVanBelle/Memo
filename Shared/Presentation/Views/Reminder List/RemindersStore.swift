@@ -21,6 +21,8 @@ final class RemindersStore: ObservableObject {
     @Published var status: Status = .idle
     @Published var reminders: [[Reminder]] = []
     @Published var alertErrorMessage: String?
+    @Published var isSheetPresented = false
+    @Published var selectedReminder: Reminder?
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -70,6 +72,14 @@ final class RemindersStore: ObservableObject {
 
 // MARK: State Machine
 
+extension Sequence {
+    func sorted<T: Comparable>(by keyPath: KeyPath<Element, T>) -> [Element] {
+        sorted { a, b in
+            a[keyPath: keyPath] < b[keyPath: keyPath]
+        }
+    }
+}
+
 extension RemindersStore {
     func send(event: Event) {
         switch event {
@@ -85,7 +95,7 @@ extension RemindersStore {
                     return ""
                 }
             }.values.sorted(by: {
-                ($0[0].date == nil) || ($0[0].date! < $1[0].date!)
+                ($0[0].date ?? .distantPast) < ($1[0].date ?? .distantPast)
             })
 
             status = .idle
@@ -107,14 +117,15 @@ extension RemindersStore {
             status = .deletingReminder(sectionIndex, reminder)
 
         case .onReminderDeleted(let sectionIndex, let reminder):
-            let index = reminders[sectionIndex].firstIndex(of: reminder)!
-            reminders.remove(at: index)
+            status = .idle
 
         case .onFailedToDeleteReminder(let error):
             alertErrorMessage = error.localizedDescription
+            status = .idle
 
         case .selectReminder(let reminder):
-            return
+            selectedReminder = reminder
+            isSheetPresented = true
 
         case .dismissError:
             alertErrorMessage = nil

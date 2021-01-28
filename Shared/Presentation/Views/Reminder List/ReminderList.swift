@@ -21,7 +21,7 @@ struct ReminderList: View {
             ForEach(0..<sections.count, id: \.self) { index in
                 VStack(alignment: .leading) {
                     if shouldShowSectionTitles {
-                        sectionTitle(for: sections[index][0].date)
+                        sectionHeader(for: sections[index][0].date)
                     }
 
                     ForEach(sections[index]) { reminder in
@@ -39,9 +39,21 @@ struct ReminderList: View {
         }
     }
 
-    func sectionTitle(for date: Date?) -> some View {
-        Text(date == nil ? "Unscheduled" : DateFormatter.relativeDateFormatter.string(from: date!))
+    func sectionHeader(for date: Date?) -> some View {
+        Text(sectionTitle(for: date))
             .font(Daisy.font.largeTitle)
             .foregroundColor(Daisy.color.primaryForeground)
+    }
+
+    func sectionTitle(for date: Date?) -> String {
+        guard let date = date else {
+            return "reminders.unscheduled".localized
+        }
+
+        if date.isBeforeToday {
+            return "reminders.overdue".localized
+        }
+
+        return DateFormatter.relativeDateFormatter.string(from: date)
     }
 }

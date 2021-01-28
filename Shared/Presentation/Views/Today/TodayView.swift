@@ -49,6 +49,7 @@ fileprivate extension TodayView {
                     if !store.reminders.isEmpty {
                         reminders
                         seeAllButon
+                            .animation(nil)
                     }
                     Color.clear
                         .frame(height: 70)

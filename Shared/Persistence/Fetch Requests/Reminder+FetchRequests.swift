@@ -37,8 +37,8 @@ extension Reminder {
     private static var basicRequest: NSFetchRequest<Reminder> {
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
         request.sortDescriptors = [
-            .init(keyPath: \Reminder.date, ascending: true),
             .init(keyPath: \Reminder.completedDate, ascending: true),
+            .init(keyPath: \Reminder.date, ascending: true),
             .init(keyPath: \Reminder.timeInSeconds, ascending: true)
         ]
         return request
