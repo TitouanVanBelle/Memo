@@ -64,6 +64,6 @@ extension DateFormatter {
     }()
 
     static let weekDays: [String] = {
-        DateFormatter().shortWeekdaySymbols ?? []
+        Array(DateFormatter().shortWeekdaySymbols.rotatedLeft())
     }()
 }

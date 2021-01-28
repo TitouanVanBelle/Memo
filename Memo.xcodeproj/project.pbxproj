@@ -134,6 +134,7 @@
 		59DF018725C2C2EA0065546C /* RemindersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF018625C2C2EA0065546C /* RemindersStore.swift */; };
 		59DF018C25C2C8540065546C /* ReminderListStore+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF018B25C2C8540065546C /* ReminderListStore+Event.swift */; };
 		59DF01A725C2CE500065546C /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF01A625C2CE500065546C /* RemindersView.swift */; };
+		59DF01EA25C35CFD0065546C /* RangeReplaceableCollection+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF01E925C35CFD0065546C /* RangeReplaceableCollection+Rotation.swift */; };
 		59DFE1AB25B793A7004D497E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFE1AA25B793A7004D497E /* PageView.swift */; };
 		59DFE1AC25B793A7004D497E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFE1AA25B793A7004D497E /* PageView.swift */; };
 		59DFE1B225B82B19004D497E /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFE1B125B82B19004D497E /* TimePicker.swift */; };
@@ -262,6 +263,7 @@
 		59DF018625C2C2EA0065546C /* RemindersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersStore.swift; sourceTree = "<group>"; };
 		59DF018B25C2C8540065546C /* ReminderListStore+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderListStore+Event.swift"; sourceTree = "<group>"; };
 		59DF01A625C2CE500065546C /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
+		59DF01E925C35CFD0065546C /* RangeReplaceableCollection+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RangeReplaceableCollection+Rotation.swift"; sourceTree = "<group>"; };
 		59DFE1AA25B793A7004D497E /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		59DFE1B125B82B19004D497E /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		59DFE1B625B83A7C004D497E /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				59A3349B25A4CC2E00E284E6 /* View+RoundedCorners.swift */,
 				5962906825C056FC0060EEFC /* View+AccessibilityIdentifiers.swift */,
 				5966F5C125B34A0200158408 /* View+TypeErasion.swift */,
+				59DF01E925C35CFD0065546C /* RangeReplaceableCollection+Rotation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -893,6 +896,7 @@
 				594309C025A377B400B92594 /* App.swift in Sources */,
 				590F947825BED312002523F7 /* TodayStore+Event.swift in Sources */,
 				59E1D7AC25BF02CC001FEBC4 /* CoreDatabasePublisher.swift in Sources */,
+				59DF01EA25C35CFD0065546C /* RangeReplaceableCollection+Rotation.swift in Sources */,
 				5962906925C056FC0060EEFC /* View+AccessibilityIdentifiers.swift in Sources */,
 				5948A63D25B9E51E00F4C373 /* SoundPlayer.swift in Sources */,
 				590F948225BED539002523F7 /* ReminderStore+State.swift in Sources */,
