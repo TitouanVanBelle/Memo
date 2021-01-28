@@ -133,23 +133,6 @@ protocol CoreDatabaseProtocol {
                 return
             }
 
-            if let date = data.date {
-                var actualDate = date
-                if let time = data.time {
-                    var components = Calendar.current.dateComponents([.day, .month, .year], from: actualDate)
-                    let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
-                    components.hour = timeComponents.hour!
-                    components.minute = timeComponents.minute!
-
-                    actualDate = Calendar.current.date(from: components)!
-                }
-
-                if actualDate.isBeforeToday {
-                    promise(.failure(CoreDataError.creationFailed(.dateInPast)))
-                    return
-                }
-            }
-
             print("💾 Updating reminder with title \(data.title)")
 
             reminder.title = data.title
