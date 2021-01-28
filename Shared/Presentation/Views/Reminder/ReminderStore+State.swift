@@ -8,7 +8,7 @@
 import Foundation
 
 extension ReminderStore {
-    struct State: AutoLense {
+    struct State {
         enum Status {
             case idle
             case checkingNotificationAuthorization

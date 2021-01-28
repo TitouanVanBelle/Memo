@@ -29,9 +29,3 @@ struct RemindersList: View {
         }
     }
 }
-
-struct RemindersList_Previews: PreviewProvider {
-    static var previews: some View {
-        RemindersList(reminders: [], onToggle: { _ in }, onDelete: { _ in }, onTap: { _ in })
-    }
-}
