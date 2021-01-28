@@ -19,4 +19,8 @@ final class ViewFactory {
     func makeReminderView(for reminder: Reminder?) -> some View {
         ReminderView(store: ReminderStore(Container.default, reminder: reminder))
     }
+
+    func makeRemindersView() -> some View {
+        RemindersView(store: RemindersStore(Container.default), viewFactory: self)
+    }
 }

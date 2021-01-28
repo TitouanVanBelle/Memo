@@ -1,34 +1,26 @@
 //
-//  TodaySummaryViewModel.swift
-//  Remind (iOS)
+//  RemindersStore.swift
+//  Memo (iOS)
 //
-//  Created by Titouan Van Belle on 04.01.21.
+//  Created by Titouan Van Belle on 28.01.21.
 //
 
 import Coil
 import Combine
 import Foundation
 
-final class TodayStore: ObservableObject {
+final class RemindersStore: ObservableObject {
 
     enum Status {
         case idle
         case loadingReminders
         case togglingReminder(Reminder)
-        case deletingReminder(Reminder)
-    }
-
-    enum SheetContentType {
-        case reminder(Reminder?)
-        case allReminders
+        case deletingReminder(Int, Reminder)
     }
 
     @Published var status: Status = .idle
-    @Published var reminders: [Reminder] = []
+    @Published var reminders: [[Reminder]] = []
     @Published var alertErrorMessage: String?
-
-    @Published var sheetContentType: SheetContentType = .allReminders
-    @Published var isSheetPresented = false
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -68,8 +60,8 @@ final class TodayStore: ObservableObject {
             return Self.whenLoadingReminders(database: database)
         case .togglingReminder(let reminder):
             return Self.whenTogglingReminder(reminder: reminder, database: database, soundPlayer: soundPlayer)
-        case .deletingReminder(let reminder):
-            return Self.whenDeletingReminder(reminder: reminder, database: database, notifier: notifier)
+        case .deletingReminder(let index, let reminder):
+            return Self.whenDeletingReminder(reminder: reminder, section: index, database: database, notifier: notifier)
         default:
             return Empty().eraseToAnyPublisher()
         }
@@ -78,7 +70,7 @@ final class TodayStore: ObservableObject {
 
 // MARK: State Machine
 
-extension TodayStore {
+extension RemindersStore {
     func send(event: Event) {
         switch event {
 
@@ -86,7 +78,16 @@ extension TodayStore {
             status = .loadingReminders
 
         case .onRemindersLoaded(let newReminders):
-            reminders = newReminders
+            reminders = Dictionary(grouping: newReminders) { reminder -> String in
+                if let date = reminder.date {
+                    return DateFormatter.dateWithoutTime.string(from: date)
+                } else {
+                    return ""
+                }
+            }.values.sorted(by: {
+                ($0[0].date == nil) || ($0[0].date! < $1[0].date!)
+            })
+
             status = .idle
 
         case .onFailedToLoadReminders(let error):
@@ -102,27 +103,18 @@ extension TodayStore {
         case .onFailedToToggleReminder:
             status = .idle
 
-        case .deleteReminder(let reminder):
-            status = .deletingReminder(reminder)
+        case .deleteReminder(let sectionIndex, let reminder):
+            status = .deletingReminder(sectionIndex, reminder)
 
-        case .onReminderDeleted(let reminder):
-            let index = reminders.firstIndex(of: reminder)!
+        case .onReminderDeleted(let sectionIndex, let reminder):
+            let index = reminders[sectionIndex].firstIndex(of: reminder)!
             reminders.remove(at: index)
 
         case .onFailedToDeleteReminder(let error):
             alertErrorMessage = error.localizedDescription
 
         case .selectReminder(let reminder):
-            sheetContentType = .reminder(reminder)
-            isSheetPresented = true
-
-        case .createNewReminder:
-            sheetContentType = .reminder(nil)
-            isSheetPresented = true
-
-        case .seeAllReminders:
-            isSheetPresented = true
-            sheetContentType = .allReminders
+            return
 
         case .dismissError:
             alertErrorMessage = nil
@@ -136,10 +128,10 @@ extension TodayStore {
 
 // MARK: Feedbacks
 
-extension TodayStore {
+extension RemindersStore {
 
     static func whenLoadingReminders(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
-        database.fetchAndListen(request: Reminder.todaysReminders)
+        database.fetchAndListen(request: Reminder.all)
             .map(Event.onRemindersLoaded)
             .catch { Just(Event.onFailedToLoadReminders($0)) }
             .eraseToAnyPublisher()
@@ -162,6 +154,7 @@ extension TodayStore {
 
     static func whenDeletingReminder(
         reminder: Reminder,
+        section: Int,
         database: CoreDatabaseProtocol,
         notifier: NotifierProtocol
     ) -> AnyPublisher<Event, Never> {
@@ -171,11 +164,12 @@ extension TodayStore {
                 .setFailureType(to: Error.self)
         )
         .map(\.0)
-        .map(Event.onReminderToggled)
-        .catch { Just(Event.onFailedToToggleReminder($0)) }
+        .map { Event.onReminderDeleted(section, $0) }
+        .catch { Just(Event.onFailedToDeleteReminder($0)) }
         .eraseToAnyPublisher()
     }
 }
 
 
-extension TodayStore: ResolverProvider {}
+extension RemindersStore: ResolverProvider {}
+

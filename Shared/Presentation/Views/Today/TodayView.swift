@@ -46,7 +46,10 @@ fileprivate extension TodayView {
             ScrollView(showsIndicators: false) {
                 LazyVStack(alignment: .leading, spacing: 20) {
                     header
-                    reminders
+                    if !store.reminders.isEmpty {
+                        reminders
+                        seeAllButon
+                    }
                     Color.clear
                         .frame(height: 70)
                 }
@@ -74,7 +77,11 @@ fileprivate extension TodayView {
             Alert(title: Text("global.error".localized), message: Text(store.alertErrorMessage!))
         }
         .sheet(isPresented: $store.isSheetPresented) {
-            reminderView
+            if case .allReminders = store.sheetContentType {
+                viewFactory.makeRemindersView()
+            } else if case .reminder(let reminder) = store.sheetContentType {
+                viewFactory.makeReminderView(for: reminder)
+            }
         }
     }
 
@@ -100,12 +107,26 @@ fileprivate extension TodayView {
     }
 
     var reminders: some View {
-        RemindersList(
-            reminders: store.reminders,
+        ReminderList(
+            sections: [store.reminders],
+            shouldShowSectionTitles: false,
             onToggle: { withAnimation(.interactiveSpring(), store.action(for: .toggleReminder($0))) },
-            onDelete: { withAnimation(.interactiveSpring(), store.action(for: .deleteReminder($0))) },
+            onDelete: { withAnimation(.interactiveSpring(), store.action(for: .deleteReminder($1))) },
             onTap: { store.send(event: .selectReminder($0)) }
         )
+    }
+
+    var seeAllButon: some View {
+        HStack {
+            Spacer()
+            Button(action: store.action(for: .seeAllReminders)) {
+                Text("See all reminder")
+                    .font(Daisy.font.largeBody)
+                    .foregroundColor(Daisy.color.secondaryForeground)
+            }
+            Spacer()
+        }
+
     }
 
     var emptyView: some View {
@@ -142,9 +163,5 @@ fileprivate extension TodayView {
         )
         .accessibilityIdentifier(.createReminderButton)
         .padding(.bottom, 28)
-    }
-
-    var reminderView: some View {
-        viewFactory.makeReminderView(for: store.selectedReminder)
     }
 }
