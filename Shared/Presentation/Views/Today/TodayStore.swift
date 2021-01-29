@@ -13,7 +13,9 @@ final class TodayStore: ObservableObject {
 
     enum Status {
         case idle
-        case loadingReminders
+        case listeningToDateUpdate
+        case listeningToReminderUpdates
+        case fetchingReminders
         case togglingReminder(Reminder)
         case deletingReminder(Reminder)
     }
@@ -64,7 +66,11 @@ final class TodayStore: ObservableObject {
 
     func feedback(for status: Status) -> AnyPublisher<Event, Never> {
         switch status {
-        case .loadingReminders:
+        case .listeningToDateUpdate:
+            return Self.whenListeningToDateUpdate(database: database)
+        case .listeningToReminderUpdates:
+            return Self.whenListeningToReminderUpdates(database: database)
+        case .fetchingReminders:
             return Self.whenLoadingReminders(database: database)
         case .togglingReminder(let reminder):
             return Self.whenTogglingReminder(reminder: reminder, database: database, soundPlayer: soundPlayer)
@@ -81,15 +87,25 @@ final class TodayStore: ObservableObject {
 extension TodayStore {
     func send(event: Event) {
         switch event {
+        case .listenToDateUpdate:
+            status = .listeningToDateUpdate
 
-        case .loadReminders:
-            status = .loadingReminders
+        case .onDateUpdateOrderReceived:
+            UserDefaults.standard.shouldUpdateData = false
+            status = .fetchingReminders
 
-        case .onRemindersLoaded(let newReminders):
+        case .fetchRemindersAndSubscribeToChange:
+            status = .listeningToReminderUpdates
+
+        case .fetchReminders:
+            status = .fetchingReminders
+
+        case .onRemindersFetched(let newReminders):
+            UserDefaults.standard.lastFetchedDate = .today
             reminders = newReminders
             status = .idle
 
-        case .onFailedToLoadReminders(let error):
+        case .onFailedToFetchReminders(let error):
             alertErrorMessage = error.localizedDescription
             status = .idle
 
@@ -105,7 +121,7 @@ extension TodayStore {
         case .deleteReminder(let reminder):
             status = .deletingReminder(reminder)
 
-        case .onReminderDeleted(let reminder):
+        case .onReminderDeleted(let _):
             status = .idle
 
         case .onFailedToDeleteReminder(let error):
@@ -138,10 +154,25 @@ extension TodayStore {
 
 extension TodayStore {
 
-    static func whenLoadingReminders(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
+    static func whenListeningToDateUpdate(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
+        UserDefaults.standard
+            .publisher(for: \.shouldUpdateData)
+            .filter { $0 }
+            .map { _ in Event.onDateUpdateOrderReceived }
+            .eraseToAnyPublisher()
+    }
+    
+    static func whenListeningToReminderUpdates(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
         database.fetchAndListen(request: Reminder.todaysReminders)
-            .map(Event.onRemindersLoaded)
-            .catch { Just(Event.onFailedToLoadReminders($0)) }
+            .map(Event.onRemindersFetched)
+            .catch { Just(Event.onFailedToFetchReminders($0)) }
+            .eraseToAnyPublisher()
+    }
+
+    static func whenLoadingReminders(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
+        database.fetch(request: Reminder.todaysReminders)
+            .map(Event.onRemindersFetched)
+            .catch { Just(Event.onFailedToFetchReminders($0)) }
             .eraseToAnyPublisher()
     }
 

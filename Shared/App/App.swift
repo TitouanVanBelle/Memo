@@ -27,6 +27,10 @@ struct MemoApp: App {
         .onChange(of: scenePhase) { phase in
             if phase == .background {
                 try? PersistenceController.shared.container.viewContext.save()
+            } else if phase == .active {
+                if let lastFetchedDate = UserDefaults.standard.lastFetchedDate, lastFetchedDate.isBeforeToday {
+                    UserDefaults.standard.shouldUpdateData = true
+                }
             }
         }
     }

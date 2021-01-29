@@ -73,7 +73,8 @@ fileprivate extension TodayView {
 
         }
         .ignoresSafeArea(.keyboard)
-        .onAppear(perform: store.action(for: .loadReminders))
+        .onAppear(perform: store.action(for: .fetchRemindersAndSubscribeToChange))
+        .onAppear(perform: store.action(for: .listenToDateUpdate))
         .alert(isPresented: isPresentingAlert) {
             Alert(title: Text("global.error".localized), message: Text(store.alertErrorMessage!))
         }

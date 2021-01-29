@@ -458,9 +458,10 @@
 				5966F59925AF18BB00158408 /* Date+Convenience.swift */,
 				594309FD25A3821B00B92594 /* Date+Formatting.swift */,
 				594309F725A381D900B92594 /* DateFormatter+Formats.swift */,
+				59DF01E925C35CFD0065546C /* RangeReplaceableCollection+Rotation.swift */,
 				59FEBB6425B74E0700CA4D0D /* String+Localized.swift */,
-				59A3349B25A4CC2E00E284E6 /* View+RoundedCorners.swift */,
 				5962906825C056FC0060EEFC /* View+AccessibilityIdentifiers.swift */,
+				59A3349B25A4CC2E00E284E6 /* View+RoundedCorners.swift */,
 				5966F5C125B34A0200158408 /* View+TypeErasion.swift */,
 			);
 			path = Extensions;

@@ -9,9 +9,13 @@ import Foundation
 
 extension TodayStore {
     enum Event {
-        case loadReminders
-        case onRemindersLoaded([Reminder])
-        case onFailedToLoadReminders(Error)
+        case listenToDateUpdate
+        case onDateUpdateOrderReceived
+
+        case fetchRemindersAndSubscribeToChange
+        case fetchReminders
+        case onRemindersFetched([Reminder])
+        case onFailedToFetchReminders(Error)
 
         case toggleReminder(Reminder)
         case onReminderToggled(Reminder)
