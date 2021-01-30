@@ -116,7 +116,7 @@ extension RemindersStore {
         case .deleteReminder(let sectionIndex, let reminder):
             status = .deletingReminder(sectionIndex, reminder)
 
-        case .onReminderDeleted(let sectionIndex, let reminder):
+        case .onReminderDeleted:
             status = .idle
 
         case .onFailedToDeleteReminder(let error):
@@ -174,8 +174,7 @@ extension RemindersStore {
             notifier.cancelNotification(withIdentifier: "\(reminder.objectID)")
                 .setFailureType(to: Error.self)
         )
-        .map(\.0)
-        .map { Event.onReminderDeleted(section, $0) }
+        .map { _ in Event.onReminderDeleted }
         .catch { Just(Event.onFailedToDeleteReminder($0)) }
         .eraseToAnyPublisher()
     }

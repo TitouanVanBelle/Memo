@@ -18,7 +18,7 @@ extension RemindersStore {
         case onFailedToToggleReminder(Error)
 
         case deleteReminder(Int, Reminder)
-        case onReminderDeleted(Int, Reminder)
+        case onReminderDeleted
         case onFailedToDeleteReminder(Error)
 
         case selectReminder(Reminder)

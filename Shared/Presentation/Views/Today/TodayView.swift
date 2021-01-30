@@ -11,7 +11,7 @@ import CoreData
 
 struct TodayView: View {
 
-    @ObservedObject var store: TodayStore
+    @StateObject var store: TodayStore
 
     let viewFactory: ViewFactory
 
@@ -21,12 +21,7 @@ struct TodayView: View {
             set: { _ in store.send(event: .dismissError) }
         )
     }
-
-    init(store: TodayStore, viewFactory: ViewFactory) {
-        self.store = store
-        self.viewFactory = viewFactory
-    }
-
+    
     var body: some View {
         #if os(macOS)
           view

@@ -9,14 +9,9 @@ import SwiftUI
 
 struct RemindersView: View {
 
-    @ObservedObject var store: RemindersStore
+    @StateObject var store: RemindersStore
 
     let viewFactory: ViewFactory
-
-    init(store: RemindersStore, viewFactory: ViewFactory) {
-        self.store = store
-        self.viewFactory = viewFactory
-    }
 
     var body: some View {
         ZStack(alignment: .top) {

@@ -105,7 +105,7 @@ extension TodayStore {
         case .deleteReminder(let reminder):
             status = .deletingReminder(reminder)
 
-        case .onReminderDeleted(let reminder):
+        case .onReminderDeleted:
             status = .idle
 
         case .onFailedToDeleteReminder(let error):
