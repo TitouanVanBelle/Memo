@@ -122,7 +122,6 @@ fileprivate extension TodayView {
             }
             Spacer()
         }
-
     }
 
     var emptyView: some View {

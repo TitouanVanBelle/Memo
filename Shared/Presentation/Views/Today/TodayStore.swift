@@ -140,6 +140,7 @@ extension TodayStore {
 
     static func whenLoadingReminders(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
         database.fetchAndListen(request: Reminder.todaysReminders)
+            .receive(on: DispatchQueue.main)
             .map(Event.onRemindersLoaded)
             .catch { Just(Event.onFailedToLoadReminders($0)) }
             .eraseToAnyPublisher()
@@ -154,6 +155,7 @@ extension TodayStore {
             database.toggleReminder(reminder),
             soundPlayer.play(reminder.isCompleted ? .reminderCompleted : .reminderUncompleted)
         )
+        .receive(on: DispatchQueue.main)
         .map(\.0)
         .map(Event.onReminderToggled)
         .catch { Just(Event.onFailedToToggleReminder($0)) }
@@ -170,6 +172,7 @@ extension TodayStore {
             notifier.cancelNotification(withIdentifier: "\(reminder.objectID)")
                 .setFailureType(to: Error.self)
         )
+        .receive(on: DispatchQueue.main)
         .map(\.0)
         .map(Event.onReminderDeleted)
         .catch { Just(Event.onFailedToDeleteReminder($0)) }

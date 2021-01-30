@@ -18,10 +18,18 @@ struct RemindersView: View {
             Daisy.color.primaryBackground
                 .edgesIgnoringSafeArea(.all)
 
-            ScrollView(showsIndicators: false) {
-                reminderList
-                    .padding(.horizontal, 28)
-                    .padding(.top, 40)
+            if store.reminders.isEmpty {
+                GeometryReader { proxy in
+                    emptyView
+                        .frame(width: 2 * proxy.size.width / 3)
+                        .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
+                }
+            } else {
+                ScrollView(showsIndicators: false) {
+                    reminderList
+                        .padding(.horizontal, 28)
+                        .padding(.top, 40)
+                }
             }
         }
         .onAppear(perform: store.action(for: .loadReminders))
@@ -40,5 +48,19 @@ fileprivate extension RemindersView {
             onDelete: { withAnimation(.interactiveSpring(), store.action(for: .deleteReminder($0, $1))) },
             onTap: { store.send(event: .selectReminder($0)) }
         )
+    }
+
+    var emptyView: some View {
+        VStack(spacing: 30) {
+            Image("NoReminders")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+
+            VStack(spacing: 6) {
+                Text("today.empty_view.title".localized)
+                    .font(Daisy.font.largeTitle)
+                    .foregroundColor(Daisy.color.primaryForeground)
+            }
+        }
     }
 }

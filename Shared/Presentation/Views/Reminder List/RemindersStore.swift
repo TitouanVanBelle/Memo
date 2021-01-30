@@ -143,6 +143,7 @@ extension RemindersStore {
 
     static func whenLoadingReminders(database: CoreDatabaseProtocol) -> AnyPublisher<Event, Never> {
         database.fetchAndListen(request: Reminder.all)
+            .receive(on: DispatchQueue.main)
             .map(Event.onRemindersLoaded)
             .catch { Just(Event.onFailedToLoadReminders($0)) }
             .eraseToAnyPublisher()
@@ -157,6 +158,7 @@ extension RemindersStore {
             database.toggleReminder(reminder),
             soundPlayer.play(reminder.isCompleted ? .reminderCompleted : .reminderUncompleted)
         )
+        .receive(on: DispatchQueue.main)
         .map(\.0)
         .map(Event.onReminderToggled)
         .catch { Just(Event.onFailedToToggleReminder($0)) }
@@ -174,6 +176,7 @@ extension RemindersStore {
             notifier.cancelNotification(withIdentifier: "\(reminder.objectID)")
                 .setFailureType(to: Error.self)
         )
+        .receive(on: DispatchQueue.main)
         .map { _ in Event.onReminderDeleted }
         .catch { Just(Event.onFailedToDeleteReminder($0)) }
         .eraseToAnyPublisher()
