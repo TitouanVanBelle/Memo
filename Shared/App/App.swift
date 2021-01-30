@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct RemindApp: App {
+struct MemoApp: App {
 
     let viewFactory = ViewFactory()
 

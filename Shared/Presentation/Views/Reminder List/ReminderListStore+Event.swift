@@ -1,13 +1,13 @@
 //
-//  TodayStore+Event.swift
-//  Remind (iOS)
+//  ReminderListStore+Event.swift
+//  Memo (iOS)
 //
-//  Created by Titouan Van Belle on 25.01.21.
+//  Created by Titouan Van Belle on 28.01.21.
 //
 
 import Foundation
 
-extension TodayStore {
+extension RemindersStore {
     enum Event {
         case loadReminders
         case onRemindersLoaded([Reminder])
@@ -17,15 +17,13 @@ extension TodayStore {
         case onReminderToggled(Reminder)
         case onFailedToToggleReminder(Error)
 
-        case deleteReminder(Reminder)
-        case onReminderDeleted(Reminder)
+        case deleteReminder(Int, Reminder)
+        case onReminderDeleted
         case onFailedToDeleteReminder(Error)
 
         case selectReminder(Reminder)
-        case createNewReminder
-
-        case seeAllReminders
 
         case dismissError
     }
 }
+

@@ -49,3 +49,7 @@
 "reminder.create" = "Créer";
 "reminder.update" = "Mettre à jour";
 
+// MARK: Reminders View
+
+"reminders.unscheduled" = "Non planifié";
+"reminders.overdue" = "En retard";

@@ -106,12 +106,16 @@ fileprivate extension ReminderCell {
 
     func foregroundColorForSubtitle(for reminder: Reminder) -> Color {
         if reminder.time != nil {
-            return reminder.combinedDateAndTime! < Date() ? Daisy.color.error : Daisy.color.quartiaryForeground
+            if reminder.combinedDateAndTime != nil {
+                return reminder.combinedDateAndTime! < Date() ? Daisy.color.error : Daisy.color.quartiaryForeground
+            } else {
+                return .clear
+            }
         } else if let date = reminder.date {
             return date.isBeforeToday ? Daisy.color.error : Daisy.color.quartiaryForeground
         }
 
-        return Color.clear
+        return .clear
     }
 
     var toggleButton: some View {

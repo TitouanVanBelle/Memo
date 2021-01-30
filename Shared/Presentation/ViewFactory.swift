@@ -10,13 +10,15 @@ import SwiftUI
 
 final class ViewFactory {
 
-    let todayStore = TodayStore(Container.default)
-
     func makeTodayView() -> some View {
-        TodayView(store: todayStore, viewFactory: self)
+        TodayView(store: TodayStore(Container.default), viewFactory: self)
     }
 
     func makeReminderView(for reminder: Reminder?) -> some View {
         ReminderView(store: ReminderStore(Container.default, reminder: reminder))
+    }
+
+    func makeRemindersView() -> some View {
+        RemindersView(store: RemindersStore(Container.default), viewFactory: self)
     }
 }

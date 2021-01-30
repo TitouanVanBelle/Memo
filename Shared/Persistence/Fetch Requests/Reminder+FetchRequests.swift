@@ -21,15 +21,15 @@ extension Reminder {
     // MARK: Predicates
 
     static let todaysReminderPredicate: NSPredicate = {
-        NSPredicate(format: "date == %@ AND (completedDate == nil OR completedDate >= %@)", startOfToday, startOfToday)
+        .init(format: "date == %@ AND (completedDate == nil OR completedDate >= %@)", startOfToday, startOfToday)
     }()
 
     static let pastUncompletedRemindersPredicate: NSPredicate = {
-        NSPredicate(format: "date < %@ AND (completedDate == nil OR completedDate >= %@)", startOfToday, startOfToday)
+        .init(format: "date < %@ AND (completedDate == nil OR completedDate >= %@)", startOfToday, startOfToday)
     }()
 
     static let remindersWithoutDatePredicate: NSPredicate = {
-        NSPredicate(format: "date == nil AND (completedDate == nil OR completedDate >= %@)", startOfToday, startOfToday)
+        .init(format: "date == nil AND (completedDate == nil OR completedDate >= %@)", startOfToday, startOfToday)
     }()
 
     // MARK: Fetch Requests
@@ -37,8 +37,9 @@ extension Reminder {
     private static var basicRequest: NSFetchRequest<Reminder> {
         let request = NSFetchRequest<Reminder>(entityName: "Reminder")
         request.sortDescriptors = [
-            NSSortDescriptor(key: "completedDate", ascending: true),
-            NSSortDescriptor(key: "timeInSeconds", ascending: true)
+            .init(keyPath: \Reminder.completedDate, ascending: true),
+            .init(keyPath: \Reminder.date, ascending: true),
+            .init(keyPath: \Reminder.timeInSeconds, ascending: true)
         ]
         return request
     }
@@ -48,14 +49,12 @@ extension Reminder {
     }()
 
     static let todaysReminders: NSFetchRequest<Reminder> = {
-        let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [
+        let request = basicRequest
+        request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [
             pastUncompletedRemindersPredicate,
             todaysReminderPredicate,
             remindersWithoutDatePredicate
         ])
-
-        let request = basicRequest
-        request.predicate = predicate
 
         return request
     }()

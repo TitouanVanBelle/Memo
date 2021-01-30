@@ -33,6 +33,12 @@ extension DateFormatter {
         return formatter
     }()
 
+    static let dateWithoutTime: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/mm/yyyy"
+        return formatter
+    }()
+
     static let timeWithMeridian: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mm a"
@@ -58,6 +64,6 @@ extension DateFormatter {
     }()
 
     static let weekDays: [String] = {
-        DateFormatter().shortWeekdaySymbols ?? []
+        Array(DateFormatter().shortWeekdaySymbols.rotatedLeft())
     }()
 }

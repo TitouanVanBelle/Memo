@@ -9,18 +9,12 @@ import SwiftUI
 
 struct ToggleButton: View {
 
-    @State var completed: Bool
+    var completed: Bool
 
     let onToggle: () -> Void
 
     var body: some View {
-        Button(action: {
-            withAnimation(.interactiveSpring()) {
-                completed.toggle()
-            }
-
-            onToggle()
-        }) {
+        Button(action: onToggle) {
             image
         }
         .background(background)

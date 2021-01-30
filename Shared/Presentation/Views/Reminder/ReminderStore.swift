@@ -140,16 +140,13 @@ extension ReminderStore {
                 shouldShowEmptyTitleErrorMessage = false
             }
 
-            if let date = data.date {
-                var actualDate = date
-                if let time = data.time {
-                    var components = Calendar.current.dateComponents([.day, .month, .year], from: actualDate)
-                    let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
-                    components.hour = timeComponents.hour!
-                    components.minute = timeComponents.minute!
+            if let date = data.date, let time = data.time {
+                var components = Calendar.current.dateComponents([.day, .month, .year], from: date)
+                let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
+                components.hour = timeComponents.hour!
+                components.minute = timeComponents.minute!
 
-                    actualDate = Calendar.current.date(from: components)!
-                }
+                let actualDate = Calendar.current.date(from: components)!
 
                 if actualDate.isInPast {
                     invalidAttempts += 1
@@ -188,16 +185,13 @@ extension ReminderStore {
                 shouldShowEmptyTitleErrorMessage = false
             }
 
-            if let date = data.date {
-                var actualDate = date
-                if let time = data.time {
-                    var components = Calendar.current.dateComponents([.day, .month, .year], from: actualDate)
-                    let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
-                    components.hour = timeComponents.hour!
-                    components.minute = timeComponents.minute!
+            if let date = data.date, let time = data.time {
+                var components = Calendar.current.dateComponents([.day, .month, .year], from: date)
+                let timeComponents = Calendar.current.dateComponents([.hour, .minute], from: time)
+                components.hour = timeComponents.hour!
+                components.minute = timeComponents.minute!
 
-                    actualDate = Calendar.current.date(from: components)!
-                }
+                let actualDate = Calendar.current.date(from: components)!
 
                 if actualDate.isInPast {
                     invalidAttempts += 1

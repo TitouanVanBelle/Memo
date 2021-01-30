@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ReminderView: View {
 
-    @ObservedObject var store: ReminderStore
+    @StateObject var store: ReminderStore
 
     @Environment(\.calendar) var calendar
     @Environment(\.presentationMode) var presentationMode
@@ -21,10 +21,6 @@ struct ReminderView: View {
             get: { store.alertErrorMessage != nil },
             set: { _ in store.send(event: .dismissError) }
         )
-    }
-
-    init(store: ReminderStore) {
-        self.store = store
     }
 
     var body: some View {
