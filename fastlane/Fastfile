@@ -21,7 +21,11 @@ lane :screenshots do
 end
 
 desc "Release a new version to the App Store"
-lane :release do
+lane :release do |options|
+  increment_version_number(
+    bump_type: options[:version] # Automatically increment patch version number
+  )
+
   match(
     type: "appstore"
   )
