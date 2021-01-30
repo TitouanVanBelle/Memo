@@ -14,7 +14,6 @@ struct ReminderView: View {
 
     @Environment(\.calendar) var calendar
     @Environment(\.presentationMode) var presentationMode
-    @Environment(\.managedObjectContext) var managedObjectContext
 
     private var isPresentingAlert: Binding<Bool> {
         Binding<Bool>(

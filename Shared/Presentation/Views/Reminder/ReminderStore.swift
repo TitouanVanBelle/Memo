@@ -163,8 +163,8 @@ extension ReminderStore {
             status = .creatingReminder(data)
 
         case .onReminderCreated:
-                shouldDismiss = true
-                status = .idle
+            shouldDismiss = true
+            status = .idle
 
         case .onFailedToCreateReminder(let error):
             alertErrorMessage = error.localizedDescription
